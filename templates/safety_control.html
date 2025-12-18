@@ -1,0 +1,392 @@
+{% extends 'base.html' %}
+
+{% block title %}伦理安全控制 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-shield-exclamation me-2"></i>伦理安全控制</h2>
+        <p class="page-subtitle">高风险预警、转诊决策、孕妇用药禁忌检测</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-5">
+        <!-- 安全检查输入 -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="bi bi-shield-check me-2"></i>安全检查
+            </div>
+            <div class="card-body">
+                <ul class="nav nav-pills mb-3" id="safetyInputTabs">
+                    <li class="nav-item">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#byPatientId">按患者ID</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#byCustom">自定义信息</button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="byPatientId">
+                        <div class="mb-3">
+                            <label class="form-label">患者ID</label>
+                            <input type="text" class="form-control" id="safetyPatientId">
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="checkSafetyById()">
+                            <i class="bi bi-shield-check me-2"></i>执行安全检查
+                        </button>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="byCustom">
+                        <div class="mb-3">
+                            <label class="form-label">性别</label>
+                            <select class="form-select" id="customGender">
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">年龄</label>
+                            <input type="number" class="form-control" id="customAge" value="35">
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="isPregnant">
+                                <label class="form-check-label">孕妇</label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">血压 (收缩压/舒张压)</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="customSbp" value="158">
+                                <span class="input-group-text">/</span>
+                                <input type="number" class="form-control" id="customDbp" value="96">
+                                <span class="input-group-text">mmHg</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">当前用药（逗号分隔）</label>
+                            <input type="text" class="form-control" id="customMeds" 
+                                   placeholder="如：依那普利,氨氯地平" value="依那普利,氨氯地平">
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="checkSafetyByCustom()">
+                            <i class="bi bi-shield-check me-2"></i>执行安全检查
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 紧急情况处理 -->
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <i class="bi bi-exclamation-triangle me-2"></i>紧急情况处理
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">症状描述</label>
+                    <textarea class="form-control" id="emergencySymptoms" rows="2" 
+                              placeholder="如：头痛呕吐3小时">头痛呕吐3小时，视物模糊</textarea>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label class="form-label">收缩压</label>
+                        <input type="number" class="form-control" id="emergencySbp" value="190">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">舒张压</label>
+                        <input type="number" class="form-control" id="emergencyDbp" value="120">
+                    </div>
+                </div>
+                <button class="btn btn-danger w-100" onclick="processEmergency()">
+                    <i class="bi bi-lightning me-2"></i>紧急处理评估
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-file-medical me-2"></i>安全检查报告
+            </div>
+            <div class="card-body" id="safetyResult">
+                <div class="text-center text-muted py-5">
+                    <i class="bi bi-shield" style="font-size: 3rem;"></i>
+                    <p class="mt-3">执行安全检查后显示报告</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 测试案例快捷入口 -->
+<div class="card mt-4">
+    <div class="card-header">
+        <i class="bi bi-lightning me-2"></i>测试案例
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="p-3 bg-danger bg-opacity-10 rounded">
+                    <h6 class="text-danger">孕妇ACEI禁忌测试</h6>
+                    <p class="small mb-2">35岁孕妇，血压158/96mmHg，正在使用依那普利</p>
+                    <button class="btn btn-sm btn-outline-danger" onclick="testPregnancy()">执行测试</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 bg-warning bg-opacity-10 rounded">
+                    <h6 class="text-warning">高血压急症测试</h6>
+                    <p class="small mb-2">收缩压190mmHg，头痛呕吐3小时</p>
+                    <button class="btn btn-sm btn-outline-warning" onclick="testEmergency()">执行测试</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 bg-info bg-opacity-10 rounded">
+                    <h6 class="text-info">药物相互作用测试</h6>
+                    <p class="small mb-2">同时使用ACEI和保钾利尿剂</p>
+                    <button class="btn btn-sm btn-outline-info" onclick="testInteraction()">执行测试</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// 检查URL参数执行预设测试
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const testType = urlParams.get('test');
+    
+    if (testType === 'pregnancy') {
+        testPregnancy();
+    } else if (testType === 'emergency') {
+        testEmergency();
+    }
+});
+
+function checkSafetyById() {
+    const patientId = document.getElementById('safetyPatientId').value.trim();
+    if (!patientId) {
+        alert('请输入患者ID');
+        return;
+    }
+    
+    executeSafetyCheck({patient_id: patientId});
+}
+
+function checkSafetyByCustom() {
+    const customProfile = {
+        gender: document.getElementById('customGender').value,
+        age: parseInt(document.getElementById('customAge').value),
+        hypertension_assessment: {
+            sbp: parseInt(document.getElementById('customSbp').value),
+            dbp: parseInt(document.getElementById('customDbp').value)
+        },
+        medications: document.getElementById('customMeds').value.split(',').map(m => ({
+            drug_name: m.trim()
+        })),
+        diagnoses: []
+    };
+    
+    // 添加孕妇诊断
+    if (document.getElementById('isPregnant').checked) {
+        customProfile.diagnoses.push({diagnosis_name: '妊娠'});
+    }
+    
+    executeSafetyCheck({custom_profile: customProfile});
+}
+
+function executeSafetyCheck(params) {
+    const container = document.getElementById('safetyResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在执行安全检查...</p></div>';
+    
+    fetch('/api/safety/check', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(params)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            renderSafetyReport(data.data);
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+        }
+    });
+}
+
+function renderSafetyReport(data) {
+    const container = document.getElementById('safetyResult');
+    const checkResult = data.check_result;
+    
+    let html = '<h5><i class="bi bi-clipboard-check me-2"></i>安全检查报告</h5>';
+    
+    // 总体评估
+    if (checkResult.is_safe) {
+        html += '<div class="alert alert-success-custom"><i class="bi bi-check-circle me-2"></i>✅ 未发现危急安全问题</div>';
+    } else {
+        html += '<div class="alert alert-danger-custom"><i class="bi bi-x-circle me-2"></i>❌ 存在需要立即处理的安全问题</div>';
+    }
+    
+    // 危急警报
+    if (checkResult.emergency_alerts && checkResult.emergency_alerts.length > 0) {
+        html += '<div class="card mb-3 border-danger"><div class="card-header bg-danger text-white">🚨 危急警报</div><div class="card-body">';
+        checkResult.emergency_alerts.forEach(alert => {
+            html += `
+                <div class="mb-3">
+                    <strong>${alert.message}</strong>
+                    ${alert.immediate_action ? '<ul class="mt-2 mb-0">' + alert.immediate_action.map(a => `<li>${a}</li>`).join('') + '</ul>' : ''}
+                    ${alert.requires_referral ? '<p class="mt-2 mb-0 text-danger"><strong>需要转诊至：</strong>' + alert.referral_department + '</p>' : ''}
+                </div>
+            `;
+        });
+        html += '</div></div>';
+    }
+    
+    // 禁忌症警告
+    if (checkResult.contraindications && checkResult.contraindications.length > 0) {
+        html += '<div class="card mb-3 border-warning"><div class="card-header bg-warning">⚠️ 禁忌症警告</div><div class="card-body">';
+        checkResult.contraindications.forEach(contra => {
+            html += `
+                <div class="mb-3">
+                    <strong>${contra.message}</strong>
+                    ${contra.reason ? `<p class="small text-muted mb-1">原因：${contra.reason}</p>` : ''}
+                    ${contra.alternative ? `<p class="small text-success mb-1">替代方案：${contra.alternative}</p>` : ''}
+                    ${contra.action ? `<p class="small text-primary mb-0">建议操作：${contra.action}</p>` : ''}
+                </div>
+            `;
+        });
+        html += '</div></div>';
+    }
+    
+    // 药物相互作用
+    if (checkResult.interactions && checkResult.interactions.length > 0) {
+        html += '<div class="card mb-3 border-info"><div class="card-header bg-info text-white">💊 药物相互作用</div><div class="card-body">';
+        checkResult.interactions.forEach(interaction => {
+            html += `<div class="mb-2">${interaction.message}</div>`;
+        });
+        html += '</div></div>';
+    }
+    
+    // 一般警告
+    if (checkResult.warnings && checkResult.warnings.length > 0) {
+        html += '<div class="card mb-3"><div class="card-header">📋 注意事项</div><div class="card-body">';
+        checkResult.warnings.forEach(warning => {
+            html += `
+                <div class="mb-2">
+                    ${warning.message}
+                    ${warning.considerations ? '<ul class="small mt-1 mb-0">' + warning.considerations.map(c => `<li>${c}</li>`).join('') + '</ul>' : ''}
+                </div>
+            `;
+        });
+        html += '</div></div>';
+    }
+    
+    // 完整报告
+    if (data.report) {
+        html += `<div class="mt-4"><h6>完整报告</h6><pre class="bg-light p-3 rounded small">${data.report}</pre></div>`;
+    }
+    
+    container.innerHTML = html;
+}
+
+function processEmergency() {
+    const symptoms = document.getElementById('emergencySymptoms').value.trim();
+    const sbp = parseInt(document.getElementById('emergencySbp').value);
+    const dbp = parseInt(document.getElementById('emergencyDbp').value);
+    
+    if (!symptoms) {
+        alert('请输入症状描述');
+        return;
+    }
+    
+    const container = document.getElementById('safetyResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在进行紧急评估...</p></div>';
+    
+    fetch('/api/emergency/process', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            symptoms: symptoms,
+            vital_signs: {sbp: sbp, dbp: dbp}
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.data.success) {
+            const result = data.data;
+            let html = '<h5><i class="bi bi-lightning me-2"></i>紧急情况评估</h5>';
+            
+            if (result.is_emergency) {
+                html += '<div class="alert alert-danger"><strong>🚨 高血压急症确认</strong></div>';
+            }
+            
+            // 立即行动
+            if (result.immediate_actions) {
+                html += '<div class="card mb-3 border-danger"><div class="card-header bg-danger text-white">立即采取措施</div><div class="card-body"><ol class="mb-0">';
+                result.immediate_actions.forEach(action => {
+                    html += `<li>${action}</li>`;
+                });
+                html += '</ol></div></div>';
+            }
+            
+            // AI响应
+            if (result.response) {
+                html += `<div class="bg-light p-3 rounded">${renderMarkdown(result.response)}</div>`;
+            }
+            
+            // 转诊建议
+            if (result.requires_referral) {
+                html += `<div class="alert alert-warning mt-3"><strong>⚠️ 需要紧急转诊至：${result.referral_department}</strong></div>`;
+            }
+            
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.data?.error || '评估失败'}</div>`;
+        }
+    });
+}
+
+// 测试案例
+function testPregnancy() {
+    document.getElementById('customGender').value = '女';
+    document.getElementById('customAge').value = '35';
+    document.getElementById('isPregnant').checked = true;
+    document.getElementById('customSbp').value = '158';
+    document.getElementById('customDbp').value = '96';
+    document.getElementById('customMeds').value = '依那普利,氨氯地平';
+    
+    // 切换到自定义输入tab
+    const tab = new bootstrap.Tab(document.querySelector('[data-bs-target="#byCustom"]'));
+    tab.show();
+    
+    checkSafetyByCustom();
+}
+
+function testEmergency() {
+    document.getElementById('emergencySymptoms').value = '头痛呕吐3小时，视物模糊';
+    document.getElementById('emergencySbp').value = '190';
+    document.getElementById('emergencyDbp').value = '120';
+    processEmergency();
+}
+
+function testInteraction() {
+    document.getElementById('customGender').value = '男';
+    document.getElementById('customAge').value = '60';
+    document.getElementById('isPregnant').checked = false;
+    document.getElementById('customSbp').value = '150';
+    document.getElementById('customDbp').value = '95';
+    document.getElementById('customMeds').value = '依那普利,螺内酯';
+    
+    const tab = new bootstrap.Tab(document.querySelector('[data-bs-target="#byCustom"]'));
+    tab.show();
+    
+    checkSafetyByCustom();
+}
+</script>
+{% endblock %}
+

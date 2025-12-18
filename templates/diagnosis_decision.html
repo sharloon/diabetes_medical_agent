@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+
+{% block title %}个性化诊疗决策 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-clipboard2-pulse me-2"></i>个性化诊疗决策</h2>
+        <p class="page-subtitle">诊断推理、治疗方案生成、动态调整</p>
+    </div>
+</div>
+
+<!-- 功能选项卡 -->
+<ul class="nav nav-tabs mb-4" id="diagnosisTabs" role="tablist">
+    <li class="nav-item">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#diagnosisTab">
+            <i class="bi bi-search-heart me-1"></i>诊断推理
+        </button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#treatmentTab">
+            <i class="bi bi-prescription2 me-1"></i>治疗方案生成
+        </button>
+    </li>
+    <li class="nav-item">
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#adjustTab">
+            <i class="bi bi-arrow-repeat me-1"></i>动态调整
+        </button>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <!-- 诊断推理 -->
+    <div class="tab-pane fade show active" id="diagnosisTab">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header">输入症状与检查数据</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">主诉/症状描述</label>
+                            <textarea class="form-control" id="symptoms" rows="3" 
+                                      placeholder="如：头晕、头痛伴视物模糊3天">头晕、头痛伴视物模糊3天，血压测量168/98mmHg</textarea>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">收缩压 (mmHg)</label>
+                                <input type="number" class="form-control" id="examSbp" value="168">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">舒张压 (mmHg)</label>
+                                <input type="number" class="form-control" id="examDbp" value="98">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <label class="form-label">HbA1c (%)</label>
+                                <input type="number" class="form-control" id="examHba1c" value="8.2" step="0.1">
+                            </div>
+                            <div class="col-6">
+                                <label class="form-label">空腹血糖 (mmol/L)</label>
+                                <input type="number" class="form-control" id="examGlucose" step="0.1">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">患者ID（可选）</label>
+                            <input type="text" class="form-control" id="diagPatientId" 
+                                   placeholder="输入已有患者ID获取背景信息">
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="generateDiagnosis()">
+                            <i class="bi bi-search me-2"></i>生成鉴别诊断
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="card-header">诊断推理结果</div>
+                    <div class="card-body" id="diagnosisResult">
+                        <div class="text-center text-muted py-5">
+                            <i class="bi bi-search-heart" style="font-size: 3rem;"></i>
+                            <p class="mt-3">输入症状后点击"生成鉴别诊断"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 治疗方案生成 -->
+    <div class="tab-pane fade" id="treatmentTab">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header">治疗方案输入</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">患者ID</label>
+                            <input type="text" class="form-control" id="treatPatientId" 
+                                   placeholder="输入患者ID">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">诊断</label>
+                            <input type="text" class="form-control" id="treatDiagnosis" 
+                                   value="2级高血压合并2型糖尿病">
+                        </div>
+                        <button class="btn btn-success w-100" onclick="generateTreatment()">
+                            <i class="bi bi-prescription2 me-2"></i>生成治疗方案
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="card-header">个性化治疗方案</div>
+                    <div class="card-body" id="treatmentResult">
+                        <div class="text-center text-muted py-5">
+                            <i class="bi bi-prescription2" style="font-size: 3rem;"></i>
+                            <p class="mt-3">输入患者信息后生成治疗方案</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 动态调整 -->
+    <div class="tab-pane fade" id="adjustTab">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="card">
+                    <div class="card-header">方案调整输入</div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">患者ID</label>
+                            <input type="text" class="form-control" id="adjustPatientId">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">当前治疗方案</label>
+                            <textarea class="form-control" id="currentPlan" rows="3" 
+                                      placeholder="描述当前使用的治疗方案">氨氯地平5mg qd，二甲双胍500mg bid</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">治疗反应/效果</label>
+                            <textarea class="form-control" id="treatmentResponse" rows="3" 
+                                      placeholder="描述治疗效果">治疗2周后血压仍为155/95mmHg，HbA1c无明显改善</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">治疗时长</label>
+                            <select class="form-select" id="treatmentDuration">
+                                <option value="1周">1周</option>
+                                <option value="2周" selected>2周</option>
+                                <option value="1个月">1个月</option>
+                                <option value="3个月">3个月</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-warning w-100" onclick="adjustTreatment()">
+                            <i class="bi bi-arrow-repeat me-2"></i>重新评估并调整
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="card">
+                    <div class="card-header">调整后的方案</div>
+                    <div class="card-body" id="adjustResult">
+                        <div class="text-center text-muted py-5">
+                            <i class="bi bi-arrow-repeat" style="font-size: 3rem;"></i>
+                            <p class="mt-3">输入治疗反应后进行方案调整</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function generateDiagnosis() {
+    const symptoms = document.getElementById('symptoms').value.trim();
+    if (!symptoms) {
+        alert('请输入症状描述');
+        return;
+    }
+    
+    const container = document.getElementById('diagnosisResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在进行诊断推理...</p></div>';
+    
+    const examData = {
+        sbp: document.getElementById('examSbp').value,
+        dbp: document.getElementById('examDbp').value,
+        hba1c: document.getElementById('examHba1c').value,
+        fasting_glucose: document.getElementById('examGlucose').value
+    };
+    
+    fetch('/api/diagnosis/generate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            symptoms: symptoms,
+            exam_data: examData,
+            patient_id: document.getElementById('diagPatientId').value || null
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.data.success) {
+            let html = '<h5><i class="bi bi-list-check me-2"></i>鉴别诊断结果</h5>';
+            
+            // 术语映射
+            if (data.data.term_mappings && data.data.term_mappings.length > 0) {
+                html += '<div class="alert alert-info small mb-3">术语标准化：';
+                data.data.term_mappings.forEach(m => {
+                    html += `<span class="badge bg-info me-1">${m.original} → ${m.normalized}</span>`;
+                });
+                html += '</div>';
+            }
+            
+            // 诊断结果
+            html += `<div class="bg-light p-3 rounded mb-3">${renderMarkdown(data.data.diagnosis_result)}</div>`;
+            
+            // 来源
+            if (data.data.sources && data.data.sources.length > 0) {
+                html += '<h6>参考来源</h6><div class="d-flex flex-wrap gap-2">';
+                data.data.sources.forEach(s => {
+                    html += formatSource(s);
+                });
+                html += '</div>';
+            }
+            
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.data?.error || '诊断失败'}</div>`;
+        }
+    });
+}
+
+function generateTreatment() {
+    const patientId = document.getElementById('treatPatientId').value.trim();
+    const diagnosis = document.getElementById('treatDiagnosis').value.trim();
+    
+    if (!patientId && !diagnosis) {
+        alert('请输入患者ID或诊断');
+        return;
+    }
+    
+    const container = document.getElementById('treatmentResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在生成个性化治疗方案...</p></div>';
+    
+    fetch('/api/treatment/generate', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            patient_id: patientId || null,
+            diagnosis: diagnosis
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.data.success) {
+            let html = '<h5><i class="bi bi-prescription2 me-2"></i>个性化治疗方案</h5>';
+            
+            // 风险等级
+            if (data.data.risk_assessment) {
+                const riskLevel = data.data.risk_assessment.overall_risk_level;
+                html += `<div class="alert alert-info mb-3">风险等级：<span class="badge bg-primary">${riskLevel}</span></div>`;
+            }
+            
+            // 安全警告
+            if (data.data.safety_check && !data.data.safety_check.is_safe) {
+                html += '<div class="alert alert-danger-custom mb-3"><strong>⚠️ 安全警告</strong><ul class="mb-0">';
+                data.data.safety_check.emergency_alerts?.forEach(a => {
+                    html += `<li>${a.message}</li>`;
+                });
+                data.data.safety_check.contraindications?.forEach(c => {
+                    html += `<li>${c.message}</li>`;
+                });
+                html += '</ul></div>';
+            }
+            
+            // 治疗方案
+            html += `<div class="bg-light p-3 rounded mb-3">${renderMarkdown(data.data.treatment_plan)}</div>`;
+            
+            // 来源
+            if (data.data.sources && data.data.sources.length > 0) {
+                html += '<h6>参考来源</h6><div class="d-flex flex-wrap gap-2">';
+                data.data.sources.forEach(s => {
+                    html += `<span class="source-tag pdf">${s.ref || s.type}</span>`;
+                });
+                html += '</div>';
+            }
+            
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.data?.error || '方案生成失败'}</div>`;
+        }
+    });
+}
+
+function adjustTreatment() {
+    const patientId = document.getElementById('adjustPatientId').value.trim();
+    const currentPlan = document.getElementById('currentPlan').value.trim();
+    const response = document.getElementById('treatmentResponse').value.trim();
+    const duration = document.getElementById('treatmentDuration').value;
+    
+    if (!currentPlan || !response) {
+        alert('请填写当前方案和治疗反应');
+        return;
+    }
+    
+    const container = document.getElementById('adjustResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在重新评估并调整方案...</p></div>';
+    
+    fetch('/api/treatment/adjust', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            patient_id: patientId || null,
+            current_plan: currentPlan,
+            treatment_response: response,
+            duration: duration
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.data.success) {
+            let html = '<h5><i class="bi bi-arrow-repeat me-2"></i>方案调整建议</h5>';
+            html += `<div class="alert alert-warning-custom mb-3">治疗${data.data.duration}后效果不佳，建议调整方案</div>`;
+            html += `<div class="bg-light p-3 rounded">${renderMarkdown(data.data.adjusted_plan)}</div>`;
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.data?.error || '调整失败'}</div>`;
+        }
+    });
+}
+</script>
+{% endblock %}
+

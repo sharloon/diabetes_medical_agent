@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+
+{% block title %}决策溯源与可视化 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-diagram-3 me-2"></i>决策溯源与可视化</h2>
+        <p class="page-subtitle">每个诊疗建议标注数据来源，展示关键诊疗决策路径</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="bi bi-search me-2"></i>决策溯源查询
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">患者ID</label>
+                    <input type="text" class="form-control" id="tracePatientId" 
+                           placeholder="输入患者ID">
+                </div>
+                <button class="btn btn-primary w-100" onclick="traceDecision()">
+                    <i class="bi bi-diagram-3 me-2"></i>生成决策路径
+                </button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-info-circle me-2"></i>数据来源图例
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-column gap-2">
+                    <div class="d-flex align-items-center">
+                        <span class="source-tag pdf me-2">📄 PDF</span>
+                        <small>指南文档（页码）</small>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="source-tag excel me-2">📊 Excel</span>
+                        <small>统计数据（行号）</small>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <span class="source-tag mysql me-2">🗄️ MySQL</span>
+                        <small>数据库（表名）</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-flow me-2"></i>决策路径可视化
+            </div>
+            <div class="card-body" id="traceResult">
+                <div class="text-center text-muted py-5">
+                    <i class="bi bi-diagram-3" style="font-size: 3rem;"></i>
+                    <p class="mt-3">输入患者ID生成决策路径</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function traceDecision() {
+    const patientId = document.getElementById('tracePatientId').value.trim();
+    if (!patientId) {
+        alert('请输入患者ID');
+        return;
+    }
+    
+    const container = document.getElementById('traceResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在生成决策路径...</p></div>';
+    
+    // 获取患者画像和治疗方案
+    Promise.all([
+        fetch(`/api/patient/profile/${encodeURIComponent(patientId)}`).then(r => r.json()),
+        fetch('/api/treatment/generate', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({patient_id: patientId})
+        }).then(r => r.json())
+    ])
+    .then(([profileData, treatmentData]) => {
+        if (!profileData.success || !profileData.data.success) {
+            container.innerHTML = '<div class="alert alert-danger">未找到该患者</div>';
+            return;
+        }
+        
+        const profile = profileData.data;
+        const treatment = treatmentData.data;
+        
+        renderDecisionPath(profile, treatment);
+    })
+    .catch(error => {
+        container.innerHTML = '<div class="alert alert-danger">生成决策路径失败</div>';
+    });
+}
+
+function renderDecisionPath(profile, treatment) {
+    const container = document.getElementById('traceResult');
+    
+    let html = `
+        <h5 class="mb-4">患者 ${profile.patient_id} 决策路径</h5>
+        
+        <!-- 决策流程图 -->
+        <div class="decision-flow mb-4">
+            <div class="row">
+                <div class="col-md-3 text-center">
+                    <div class="decision-node bg-primary text-white rounded-3 p-3 mb-2">
+                        <i class="bi bi-person-fill" style="font-size: 2rem;"></i>
+                        <div class="mt-2">数据采集</div>
+                    </div>
+                    <small class="text-muted">患者基本信息</small>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="decision-node bg-info text-white rounded-3 p-3 mb-2">
+                        <i class="bi bi-search" style="font-size: 2rem;"></i>
+                        <div class="mt-2">知识检索</div>
+                    </div>
+                    <small class="text-muted">多源知识融合</small>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="decision-node bg-warning rounded-3 p-3 mb-2">
+                        <i class="bi bi-graph-up" style="font-size: 2rem;"></i>
+                        <div class="mt-2">风险评估</div>
+                    </div>
+                    <small class="text-muted">风险分层</small>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="decision-node bg-success text-white rounded-3 p-3 mb-2">
+                        <i class="bi bi-prescription2" style="font-size: 2rem;"></i>
+                        <div class="mt-2">方案生成</div>
+                    </div>
+                    <small class="text-muted">个性化治疗</small>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 详细溯源 -->
+        <div class="accordion" id="traceAccordion">
+    `;
+    
+    // 1. 患者数据来源
+    html += `
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#traceData">
+                    <span class="source-tag mysql me-2">🗄️ MySQL</span> 
+                    <strong>患者数据来源</strong>
+                </button>
+            </h2>
+            <div id="traceData" class="accordion-collapse collapse show" data-bs-parent="#traceAccordion">
+                <div class="accordion-body">
+                    <table class="table table-sm">
+                        <tr><td>基本信息</td><td><code>patient_info</code> 表</td></tr>
+                        <tr><td>高血压评估</td><td><code>hypertension_risk_assessment</code> 表</td></tr>
+                        <tr><td>糖尿病评估</td><td><code>diabetes_control_assessment</code> 表</td></tr>
+                        <tr><td>用药记录</td><td><code>medication_records</code> 表</td></tr>
+                        <tr><td>诊断记录</td><td><code>diagnosis_records</code> 表</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // 2. 知识检索来源
+    html += `
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#traceKnowledge">
+                    <span class="source-tag pdf me-2">📄 PDF</span>
+                    <strong>知识检索来源</strong>
+                </button>
+            </h2>
+            <div id="traceKnowledge" class="accordion-collapse collapse" data-bs-parent="#traceAccordion">
+                <div class="accordion-body">
+    `;
+    
+    if (treatment && treatment.sources) {
+        treatment.sources.forEach(source => {
+            html += `<div class="mb-2">${formatSource(source)}</div>`;
+        });
+    } else {
+        html += `
+            <div class="mb-2"><span class="source-tag pdf">高血压诊疗指南.pdf</span></div>
+            <div class="mb-2"><span class="source-tag pdf">中国高血压防治指南.pdf</span></div>
+            <div class="mb-2"><span class="source-tag mysql">guideline_recommendations 表</span></div>
+        `;
+    }
+    
+    html += '</div></div></div>';
+    
+    // 3. 风险评估逻辑
+    if (profile.risk_assessment) {
+        const ra = profile.risk_assessment;
+        html += `
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#traceRisk">
+                        <i class="bi bi-graph-up text-warning me-2"></i>
+                        <strong>风险评估逻辑</strong>
+                        <span class="badge bg-primary ms-2">${ra.overall_risk_level}</span>
+                    </button>
+                </h2>
+                <div id="traceRisk" class="accordion-collapse collapse" data-bs-parent="#traceAccordion">
+                    <div class="accordion-body">
+                        <h6>评估步骤</h6>
+                        <ol>
+        `;
+        
+        if (ra.hypertension_risk?.evaluation_logic) {
+            ra.hypertension_risk.evaluation_logic.forEach(logic => {
+                html += `<li>${logic}</li>`;
+            });
+        }
+        
+        html += `
+                        </ol>
+                        <h6 class="mt-3">危险因素</h6>
+                        <div class="d-flex flex-wrap gap-2">
+                            ${(ra.risk_factors || []).map(f => `<span class="badge bg-warning text-dark">${f}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // 4. 治疗方案生成
+    if (treatment && treatment.treatment_plan) {
+        html += `
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#traceTreatment">
+                        <i class="bi bi-prescription2 text-success me-2"></i>
+                        <strong>治疗方案生成</strong>
+                    </button>
+                </h2>
+                <div id="traceTreatment" class="accordion-collapse collapse" data-bs-parent="#traceAccordion">
+                    <div class="accordion-body">
+                        ${renderMarkdown(treatment.treatment_plan)}
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    html += '</div>';
+    
+    container.innerHTML = html;
+}
+</script>
+
+<style>
+.decision-node {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.decision-flow .col-md-3:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #94a3b8;
+}
+
+.decision-flow .row {
+    position: relative;
+}
+
+.decision-flow .col-md-3 {
+    position: relative;
+}
+</style>
+{% endblock %}
+

@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+
+{% block title %}糖尿病智能诊断助手 - 首页{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="page-title">
+        <i class="bi bi-heart-pulse text-primary"></i>
+        糖尿病智能诊断助手
+    </h1>
+    <p class="page-subtitle">基于RAG和智能体技术的专家级医疗决策支持系统</p>
+</div>
+
+<!-- 功能菜单 - 平铺展示 -->
+<div class="row g-4">
+    <!-- 基础数据层 -->
+    <div class="col-12">
+        <h4 class="mb-3"><i class="bi bi-database me-2"></i>基础数据层</h4>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/pdf_knowledge" class="text-decoration-none">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-file-pdf text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">PDF知识库构建</h5>
+                            <small class="text-muted">提取文档目录、表格与术语映射</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">解析高血压诊疗指南等PDF文档，提取关键信息并构建知识索引</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/term_mapping" class="text-decoration-none">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-success bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-translate text-success" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">术语标准化映射</h5>
+                            <small class="text-muted">医学俗称到标准术语的映射</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">将"心梗"映射到"心肌梗死"等标准医学术语，提高检索准确率</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/excel_analysis" class="text-decoration-none">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-info bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-file-excel text-info" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Excel数据分析</h5>
+                            <small class="text-muted">糖尿病病例统计与可视化</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">分析胰岛素使用率、按性别/年龄/BMI分布的可视化图表</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/multimodal_search" class="text-decoration-none">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-warning bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-search text-warning" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">多模态数据整合</h5>
+                            <small class="text-muted">PDF+Excel+MySQL统一检索</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">跨源统一检索接口，支持指南时效性验证</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/chat" class="text-decoration-none">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-chat-dots text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">智能对话</h5>
+                            <small class="text-muted">基于知识库的智能问答</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">有知识库时返回专业信息，无相关知识时给出专业提示</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/system_admin" class="text-decoration-none">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-secondary bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-gear text-secondary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">系统运维</h5>
+                            <small class="text-muted">定时索引更新与日志查看</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">后台每2分钟自动更新文档RAG索引，查看更新日志</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <!-- 专家智能体核心能力 -->
+    <div class="col-12 mt-4">
+        <h4 class="mb-3"><i class="bi bi-cpu me-2"></i>专家智能体核心能力</h4>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/clinical_analysis" class="text-decoration-none">
+            <div class="card h-100 border-primary border-opacity-25">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-person-badge text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">临床数据查询与分析</h5>
+                            <small class="text-muted">患者画像、风险评估、用药检测</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">输入患者ID自动生成完整画像，进行风险分层和用药冲突检测</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/diagnosis_decision" class="text-decoration-none">
+            <div class="card h-100 border-success border-opacity-25">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-success bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-clipboard2-pulse text-success" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">个性化诊疗决策</h5>
+                            <small class="text-muted">诊断推理、方案生成、动态调整</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">生成鉴别诊断列表、个性化治疗方案，支持疗效跟踪与方案调整</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/evidence_support" class="text-decoration-none">
+            <div class="card h-100 border-info border-opacity-25">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-info bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-journal-medical text-info" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">循证医学支持</h5>
+                            <small class="text-muted">证据等级标注、多源知识融合</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">所有建议标注证据等级（如ⅠA、ⅡB），标注指南出处和更新时间</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/safety_control" class="text-decoration-none">
+            <div class="card h-100 border-danger border-opacity-25">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-danger bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-shield-exclamation text-danger" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">伦理安全控制</h5>
+                            <small class="text-muted">高风险预警、转诊决策</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">孕妇ACEI禁忌警示、高血压急症转诊建议等安全预警</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/soap_consultation" class="text-decoration-none">
+            <div class="card h-100 border-warning border-opacity-25">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-warning bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-chat-square-text text-warning" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">智能体对话管理</h5>
+                            <small class="text-muted">SOAP结构化问诊、信息澄清</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">按SOAP格式进行结构化问诊，主动追问关键细节信息</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    
+    <div class="col-md-6 col-lg-4">
+        <a href="/decision_trace" class="text-decoration-none">
+            <div class="card h-100 border-secondary border-opacity-25">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-secondary bg-opacity-10 rounded-3 p-3 me-3">
+                            <i class="bi bi-diagram-3 text-secondary" style="font-size: 2rem;"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">决策溯源与可视化</h5>
+                            <small class="text-muted">数据来源追溯、推理路径展示</small>
+                        </div>
+                    </div>
+                    <p class="text-secondary small mb-0">标注数据来源（PDF页码、Excel行号、MySQL表名），展示决策路径</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- 快速测试入口 -->
+<div class="card mt-5">
+    <div class="card-header">
+        <i class="bi bi-lightning me-2"></i>快速测试案例
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-4">
+                <div class="p-3 bg-light rounded-3">
+                    <h6>测试案例1</h6>
+                    <p class="small text-muted mb-2">患者ID: 1002_0_20210504</p>
+                    <p class="small mb-2">58岁男性，BMI 28.5，血压168/98mmHg，2级高血压，合并2型糖尿病</p>
+                    <a href="/clinical_analysis?patient_id=1002_0_20210504" class="btn btn-sm btn-primary">查看分析</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 bg-light rounded-3">
+                    <h6>测试案例2</h6>
+                    <p class="small text-muted mb-2">孕妇用药禁忌检测</p>
+                    <p class="small mb-2">35岁孕妇，血压158/96mmHg，检测ACEI/ARB禁忌</p>
+                    <a href="/safety_control?test=pregnancy" class="btn btn-sm btn-danger">安全检查</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="p-3 bg-light rounded-3">
+                    <h6>测试案例3</h6>
+                    <p class="small text-muted mb-2">高血压急症处理</p>
+                    <p class="small mb-2">收缩压190mmHg，头痛呕吐3小时</p>
+                    <a href="/safety_control?test=emergency" class="btn btn-sm btn-warning">紧急处理</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

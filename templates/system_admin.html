@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+
+{% block title %}系统运维 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-gear me-2"></i>系统运维</h2>
+        <p class="page-subtitle">索引管理、系统状态监控、日志查看</p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-database text-primary" style="font-size: 2rem;"></i>
+                <h5 class="mt-2" id="dbStatus">检查中...</h5>
+                <p class="text-muted mb-0">数据库状态</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-archive text-success" style="font-size: 2rem;"></i>
+                <h5 class="mt-2" id="indexStatus">检查中...</h5>
+                <p class="text-muted mb-0">向量索引状态</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-center">
+            <div class="card-body">
+                <i class="bi bi-clock text-info" style="font-size: 2rem;"></i>
+                <h5 class="mt-2" id="schedulerStatus">检查中...</h5>
+                <p class="text-muted mb-0">定时任务状态</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="bi bi-archive me-2"></i>索引管理
+            </div>
+            <div class="card-body">
+                <div id="indexInfo">
+                    <div class="loading"><span></span><span></span><span></span></div>
+                </div>
+                <hr>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" onclick="rebuildIndex()">
+                        <i class="bi bi-arrow-repeat me-2"></i>手动重建索引
+                    </button>
+                    <button class="btn btn-outline-secondary" onclick="refreshStatus()">
+                        <i class="bi bi-arrow-clockwise me-2"></i>刷新状态
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-clock-history me-2"></i>定时任务配置
+            </div>
+            <div class="card-body">
+                <div id="schedulerInfo">
+                    <div class="loading"><span></span><span></span><span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-terminal me-2"></i>系统日志</span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="loadLogs()">
+                    <i class="bi bi-arrow-clockwise"></i>
+                </button>
+            </div>
+            <div class="card-body p-0">
+                <pre class="bg-dark text-light p-3 mb-0" id="systemLogs" 
+                     style="height: 400px; overflow-y: auto; font-size: 0.8rem;">
+加载中...
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    refreshStatus();
+    loadLogs();
+});
+
+function refreshStatus() {
+    fetch('/api/system/status')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const status = data.data;
+            
+            // 数据库状态
+            document.getElementById('dbStatus').innerHTML = status.database?.connected 
+                ? '<span class="text-success">已连接</span>' 
+                : '<span class="text-danger">未连接</span>';
+            
+            // 索引状态
+            if (status.vector_store) {
+                document.getElementById('indexStatus').innerHTML = status.vector_store.is_loaded 
+                    ? '<span class="text-success">已加载</span>' 
+                    : '<span class="text-warning">未加载</span>';
+                
+                document.getElementById('indexInfo').innerHTML = `
+                    <table class="table table-sm mb-0">
+                        <tr><td>索引状态</td><td>${status.vector_store.is_loaded ? '已加载' : '未加载'}</td></tr>
+                        <tr><td>文档数量</td><td>${status.vector_store.doc_count || 0}</td></tr>
+                        <tr><td>最后更新</td><td>${status.vector_store.last_update_time || 'N/A'}</td></tr>
+                        <tr><td>存储路径</td><td class="small">${status.vector_store.persist_dir}</td></tr>
+                    </table>
+                `;
+            }
+            
+            // 定时任务状态
+            if (status.scheduler) {
+                document.getElementById('schedulerStatus').innerHTML = status.scheduler.is_running 
+                    ? '<span class="text-success">运行中</span>' 
+                    : '<span class="text-danger">已停止</span>';
+                
+                document.getElementById('schedulerInfo').innerHTML = `
+                    <table class="table table-sm mb-0">
+                        <tr><td>运行状态</td><td>${status.scheduler.is_running ? '运行中' : '已停止'}</td></tr>
+                        <tr><td>更新间隔</td><td>${status.scheduler.interval_seconds}秒</td></tr>
+                        <tr><td>累计更新</td><td>${status.scheduler.update_count}次</td></tr>
+                        <tr><td>最后更新</td><td>${status.scheduler.last_update_time || 'N/A'}</td></tr>
+                        <tr><td>下次更新</td><td>${status.scheduler.next_run_time || 'N/A'}</td></tr>
+                    </table>
+                `;
+            }
+        }
+    })
+    .catch(error => {
+        document.getElementById('dbStatus').innerHTML = '<span class="text-danger">检查失败</span>';
+        document.getElementById('indexStatus').innerHTML = '<span class="text-danger">检查失败</span>';
+        document.getElementById('schedulerStatus').innerHTML = '<span class="text-danger">检查失败</span>';
+    });
+}
+
+function rebuildIndex() {
+    if (!confirm('确定要重建索引吗？这可能需要几分钟时间。')) return;
+    
+    fetch('/api/system/rebuild-index', {method: 'POST'})
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('索引重建任务已触发，请稍后刷新状态查看结果。');
+            setTimeout(refreshStatus, 3000);
+        } else {
+            alert('触发失败：' + data.error);
+        }
+    });
+}
+
+function loadLogs() {
+    fetch('/api/system/logs')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const logsContainer = document.getElementById('systemLogs');
+            logsContainer.textContent = data.data || '暂无日志';
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+        }
+    });
+}
+
+// 自动刷新日志
+setInterval(loadLogs, 30000);
+</script>
+{% endblock %}
+

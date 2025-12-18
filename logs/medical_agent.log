@@ -1,0 +1,1176 @@
+2025-12-18 16:12:48 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:12:48 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:12:48 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:12:48 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:12:49 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:12:49 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:12:49 | INFO     | vector_store:__init__:54 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:12:49 | WARNING  | vector_store:load_index:142 - 索引目录不存在: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:12:49 | INFO     | vector_store:init_vector_store:308 - 现有索引不存在或加载失败，开始构建新索引
+2025-12-18 16:12:53 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:12:53 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:12:53 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:12:53 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:12:53 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:12:53.936166
+2025-12-18 16:12:53 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:12:57 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:13:00 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:13:00 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:13:00 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:13:01 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:13:01 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:13:02 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:13:02 | ERROR    | scheduler:_update_index_job:95 - 索引更新失败
+2025-12-18 16:13:02 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:13:02 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:13:02 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:13:02 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:13:15 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:13:15 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:13:15 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:13:15 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:13:16 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:13:16 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:13:16 | INFO     | vector_store:__init__:54 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:13:16 | WARNING  | vector_store:load_index:142 - 索引目录不存在: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:13:16 | INFO     | vector_store:init_vector_store:308 - 现有索引不存在或加载失败，开始构建新索引
+2025-12-18 16:13:20 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:13:20 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:13:20 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:13:20 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:13:20 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:13:20.295915
+2025-12-18 16:13:20 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:13:23 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:13:27 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:13:27 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:13:27 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:13:28 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:13:28 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:13:28 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:13:28 | ERROR    | scheduler:_update_index_job:95 - 索引更新失败
+2025-12-18 16:13:28 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:13:28 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:13:28 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:13:28 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:14:06 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:14:06 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:14:06 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:14:06 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:14:07 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:14:07 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:14:07 | INFO     | vector_store:__init__:54 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:14:07 | WARNING  | vector_store:load_index:142 - 索引目录不存在: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:14:07 | INFO     | vector_store:init_vector_store:308 - 现有索引不存在或加载失败，开始构建新索引
+2025-12-18 16:14:11 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:14:11 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:14:11 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:14:11 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:14:11 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:14:11.806347
+2025-12-18 16:14:11 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:14:15 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:14:19 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:14:19 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:14:19 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:15:00 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:15:00 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:15:00 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:15:00 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:15:00 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:15:01 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:15:01 | INFO     | vector_store:__init__:54 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:15:01 | WARNING  | vector_store:load_index:142 - 索引目录不存在: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:15:01 | INFO     | vector_store:init_vector_store:308 - 现有索引不存在或加载失败，开始构建新索引
+2025-12-18 16:15:05 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:15:05 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:15:05 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:15:05 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:15:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:15:05.209531
+2025-12-18 16:15:05 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:15:08 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:15:11 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:15:11 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:15:12 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:15:12 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:15:12 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:15:13 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:15:13 | ERROR    | scheduler:_update_index_job:95 - 索引更新失败
+2025-12-18 16:15:13 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:15:13 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:15:13 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:15:13 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:15:27 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:15:27 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:15:27 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:15:27 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:15:27 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:15:27 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:15:28 | INFO     | vector_store:__init__:54 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:15:28 | WARNING  | vector_store:load_index:142 - 索引目录不存在: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:15:28 | INFO     | vector_store:init_vector_store:308 - 现有索引不存在或加载失败，开始构建新索引
+2025-12-18 16:15:32 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:15:32 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:15:32 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:15:32 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:15:32 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:15:32.015195
+2025-12-18 16:15:32 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:16:30 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:16:30 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:16:30 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:16:30 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:16:30 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:16:30 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:16:31 | INFO     | vector_store:__init__:54 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:16:31 | WARNING  | vector_store:load_index:142 - 索引目录不存在: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:16:31 | INFO     | vector_store:init_vector_store:308 - 现有索引不存在或加载失败，开始构建新索引
+2025-12-18 16:16:34 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:16:34 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:16:34 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:16:34 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:16:34 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:16:34.648638
+2025-12-18 16:16:34 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:16:38 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:16:41 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:16:41 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:16:41 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:16:42 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:16:42 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:16:42 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:16:42 | ERROR    | scheduler:_update_index_job:95 - 索引更新失败
+2025-12-18 16:16:42 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:16:42 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:16:42 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:16:42 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:16:56 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:16:56 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:16:56 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:16:56 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:16:56 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:16:56 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:16:57 | INFO     | vector_store:__init__:54 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:16:57 | WARNING  | vector_store:load_index:142 - 索引目录不存在: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:16:57 | INFO     | vector_store:init_vector_store:308 - 现有索引不存在或加载失败，开始构建新索引
+2025-12-18 16:17:00 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:17:00 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:17:00 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:17:00 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:17:00 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:17:00.972254
+2025-12-18 16:17:00 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:17:04 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:17:07 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:17:07 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:17:08 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:17:08 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:17:08 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:17:09 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:17:09 | ERROR    | scheduler:_update_index_job:95 - 索引更新失败
+2025-12-18 16:17:09 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:17:09 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:17:09 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:17:09 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:18:32 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:18:32 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:18:32 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:18:32 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:18:33 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:18:33 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:18:33 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:18:33 | WARNING  | vector_store:load_index:146 - 索引目录不存在: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:18:33 | INFO     | vector_store:init_vector_store:312 - 现有索引不存在或加载失败，开始构建新索引
+2025-12-18 16:18:34 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:18:34.666936
+2025-12-18 16:18:34 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:18:39 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:18:42 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:18:42 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:18:43 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:18:43 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:18:43 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:18:44 | ERROR    | vector_store:build_index:97 - 向量索引构建失败: 25 validation errors for EmbeddingEndEvent
+embeddings.0
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.1
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.2
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.3
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.4
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.5
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.6
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.7
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.8
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.9
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.10
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.11
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.12
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.13
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.14
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.15
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.16
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.17
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.18
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.19
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.20
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.21
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.22
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.23
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+embeddings.24
+  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+2025-12-18 16:18:44 | ERROR    | scheduler:_update_index_job:95 - 索引更新失败
+2025-12-18 16:19:04 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:19:04 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 16:19:04.344192
+2025-12-18 16:19:04 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:19:04 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:19:04 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:19:04 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:19:04.354727
+2025-12-18 16:19:04 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:19:08 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:19:11 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:19:11 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:19:11 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:19:12 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:19:12 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块

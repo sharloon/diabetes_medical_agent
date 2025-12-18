@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% block title %}SOAP结构化问诊 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-chat-square-text me-2"></i>SOAP结构化问诊</h2>
+        <p class="page-subtitle">按SOAP格式进行结构化问诊，主动追问关键细节</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-chat-dots me-2"></i>问诊对话</span>
+                <button class="btn btn-sm btn-outline-secondary" onclick="resetConsultation()">
+                    <i class="bi bi-arrow-counterclockwise"></i> 重新开始
+                </button>
+            </div>
+            <div class="card-body p-0">
+                <div class="chat-container" id="soapChatContainer" style="height: 450px;">
+                    <div class="chat-message ai">
+                        <div class="chat-avatar ai"><i class="bi bi-person-badge"></i></div>
+                        <div class="chat-bubble">
+                            您好，我是您的问诊医生。请描述您的主要症状或不适，我将按照SOAP格式进行结构化问诊。<br><br>
+                            <small class="text-muted">SOAP格式包括：主观资料(S)、客观资料(O)、评估(A)、计划(P)</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-3 border-top">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="soapInput" 
+                               placeholder="请描述您的症状..." 
+                               onkeypress="if(event.key==='Enter') submitComplaint()">
+                        <button class="btn btn-primary" onclick="submitComplaint()">
+                            <i class="bi bi-send"></i> 发送
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="bi bi-person me-2"></i>患者信息（可选）
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">患者ID</label>
+                    <input type="text" class="form-control" id="soapPatientId" 
+                           placeholder="绑定已有患者">
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="bi bi-lightning me-2"></i>快速测试
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-outline-primary btn-sm" onclick="testComplaint('头晕')">
+                        主诉：头晕
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm" onclick="testComplaint('胸闷气短2天')">
+                        主诉：胸闷气短2天
+                    </button>
+                    <button class="btn btn-outline-primary btn-sm" onclick="testComplaint('口渴多饮多尿1周')">
+                        主诉：口渴多饮多尿1周
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" id="soapRecordCard" style="display: none;">
+            <div class="card-header bg-success text-white">
+                <i class="bi bi-file-medical me-2"></i>SOAP病历记录
+            </div>
+            <div class="card-body" id="soapRecord">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let conversationHistory = [];
+
+function submitComplaint() {
+    const input = document.getElementById('soapInput');
+    const complaint = input.value.trim();
+    
+    if (!complaint) return;
+    
+    // 显示用户消息
+    appendSoapMessage(complaint, 'user');
+    input.value = '';
+    
+    // 显示加载状态
+    const loadingId = appendSoapMessage('<div class="loading"><span></span><span></span><span></span></div>', 'ai', true);
+    
+    // 发送请求
+    fetch('/api/soap/consult', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            chief_complaint: complaint,
+            patient_id: document.getElementById('soapPatientId').value || null,
+            history: conversationHistory
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById(loadingId)?.remove();
+        
+        if (data.success && data.data.success) {
+            const result = data.data;
+            
+            if (result.status === 'need_clarification') {
+                // 需要追问
+                appendSoapMessage(result.questions, 'ai');
+                
+                // 更新历史
+                conversationHistory.push({role: 'user', content: complaint});
+                conversationHistory.push({role: 'assistant', content: result.questions});
+            } else {
+                // SOAP记录完成
+                appendSoapMessage('问诊完成，已生成SOAP病历记录。', 'ai');
+                
+                // 显示SOAP记录
+                document.getElementById('soapRecordCard').style.display = 'block';
+                document.getElementById('soapRecord').innerHTML = renderMarkdown(result.soap_record);
+            }
+        } else {
+            appendSoapMessage('问诊出现问题，请重试。', 'ai');
+        }
+    })
+    .catch(error => {
+        document.getElementById(loadingId)?.remove();
+        appendSoapMessage('网络错误，请稍后重试。', 'ai');
+    });
+}
+
+function appendSoapMessage(content, type, isLoading = false) {
+    const container = document.getElementById('soapChatContainer');
+    const messageId = 'msg-' + Date.now();
+    
+    const avatar = type === 'ai' 
+        ? '<div class="chat-avatar ai"><i class="bi bi-person-badge"></i></div>'
+        : '<div class="chat-avatar user"><i class="bi bi-person"></i></div>';
+    
+    const bubble = isLoading ? content : renderMarkdown(content);
+    
+    const html = `
+        <div class="chat-message ${type}" id="${messageId}">
+            ${avatar}
+            <div class="chat-bubble">${bubble}</div>
+        </div>
+    `;
+    
+    container.insertAdjacentHTML('beforeend', html);
+    container.scrollTop = container.scrollHeight;
+    
+    return messageId;
+}
+
+function testComplaint(complaint) {
+    document.getElementById('soapInput').value = complaint;
+    submitComplaint();
+}
+
+function resetConsultation() {
+    conversationHistory = [];
+    document.getElementById('soapChatContainer').innerHTML = `
+        <div class="chat-message ai">
+            <div class="chat-avatar ai"><i class="bi bi-person-badge"></i></div>
+            <div class="chat-bubble">
+                问诊已重置。请描述您的主要症状或不适。
+            </div>
+        </div>
+    `;
+    document.getElementById('soapRecordCard').style.display = 'none';
+}
+</script>
+{% endblock %}
+

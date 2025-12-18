@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+
+{% block title %}Excel数据分析 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-file-excel me-2"></i>Excel数据分析</h2>
+        <p class="page-subtitle">糖尿病病例统计数据分析与可视化</p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h3 class="text-primary" id="totalPatients">-</h3>
+                <p class="text-muted mb-0">总患者数</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h3 class="text-success" id="insulinUsers">-</h3>
+                <p class="text-muted mb-0">使用胰岛素</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h3 class="text-info" id="insulinNonUsers">-</h3>
+                <p class="text-muted mb-0">未使用胰岛素</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center">
+            <div class="card-body">
+                <h3 class="text-warning" id="insulinRate">-</h3>
+                <p class="text-muted mb-0">胰岛素使用率</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <i class="bi bi-pie-chart me-2"></i>性别分布
+            </div>
+            <div class="card-body">
+                <canvas id="genderChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <i class="bi bi-bar-chart me-2"></i>年龄段分布
+            </div>
+            <div class="card-body">
+                <canvas id="ageChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <i class="bi bi-graph-up me-2"></i>BMI分布
+            </div>
+            <div class="card-body">
+                <canvas id="bmiChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <i class="bi bi-clipboard-data me-2"></i>胰岛素使用情况
+            </div>
+            <div class="card-body">
+                <canvas id="insulinChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let genderChart, ageChart, bmiChart, insulinChart;
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadExcelStats();
+});
+
+function loadExcelStats() {
+    fetch('/api/excel/stats')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // 获取第一个文件的统计数据
+            const firstFile = Object.keys(data.data)[0];
+            if (firstFile) {
+                const stats = data.data[firstFile];
+                
+                // 更新统计卡片
+                if (stats.insulin_stats) {
+                    document.getElementById('totalPatients').textContent = stats.insulin_stats.total_patients || '-';
+                    document.getElementById('insulinUsers').textContent = stats.insulin_stats.insulin_users || '-';
+                    document.getElementById('insulinNonUsers').textContent = stats.insulin_stats.insulin_non_users || '-';
+                    document.getElementById('insulinRate').textContent = (stats.insulin_stats.usage_rate || 0) + '%';
+                }
+                
+                // 渲染图表
+                renderGenderChart(stats.gender_distribution);
+                renderAgeChart(stats.age_distribution);
+                renderBmiChart(stats.bmi_distribution);
+                renderInsulinChart(stats.insulin_stats);
+            }
+        }
+    })
+    .catch(error => {
+        console.error('加载Excel统计失败:', error);
+    });
+}
+
+function renderGenderChart(data) {
+    if (!data || Object.keys(data).length === 0) {
+        document.getElementById('genderChart').parentElement.innerHTML = '<div class="text-center text-muted">暂无数据</div>';
+        return;
+    }
+    
+    const ctx = document.getElementById('genderChart').getContext('2d');
+    genderChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(data),
+            datasets: [{
+                data: Object.values(data),
+                backgroundColor: ['#3b82f6', '#ec4899', '#10b981'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+function renderAgeChart(data) {
+    if (!data || Object.keys(data).length === 0) {
+        document.getElementById('ageChart').parentElement.innerHTML = '<div class="text-center text-muted">暂无数据</div>';
+        return;
+    }
+    
+    // 按年龄段排序
+    const sortedKeys = Object.keys(data).sort((a, b) => {
+        const aNum = parseInt(a.match(/\d+/)?.[0] || 0);
+        const bNum = parseInt(b.match(/\d+/)?.[0] || 0);
+        return aNum - bNum;
+    });
+    
+    const ctx = document.getElementById('ageChart').getContext('2d');
+    ageChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: sortedKeys,
+            datasets: [{
+                label: '人数',
+                data: sortedKeys.map(k => data[k]),
+                backgroundColor: '#3b82f6',
+                borderRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+function renderBmiChart(data) {
+    if (!data || Object.keys(data).length === 0) {
+        document.getElementById('bmiChart').parentElement.innerHTML = '<div class="text-center text-muted">暂无数据</div>';
+        return;
+    }
+    
+    const ctx = document.getElementById('bmiChart').getContext('2d');
+    bmiChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(data),
+            datasets: [{
+                data: Object.values(data),
+                backgroundColor: ['#22c55e', '#3b82f6', '#f59e0b', '#ef4444'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+
+function renderInsulinChart(data) {
+    if (!data) {
+        document.getElementById('insulinChart').parentElement.innerHTML = '<div class="text-center text-muted">暂无数据</div>';
+        return;
+    }
+    
+    const ctx = document.getElementById('insulinChart').getContext('2d');
+    insulinChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['使用胰岛素', '未使用胰岛素'],
+            datasets: [{
+                data: [data.insulin_users || 0, data.insulin_non_users || 0],
+                backgroundColor: ['#10b981', '#e5e7eb'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+}
+</script>
+{% endblock %}
+

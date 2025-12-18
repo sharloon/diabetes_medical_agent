@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+
+{% block title %}多模态数据整合 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-search me-2"></i>多模态数据整合</h2>
+        <p class="page-subtitle">PDF+Excel+MySQL统一检索接口，支持指南时效性验证</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="bi bi-search me-2"></i>跨源检索
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">检索关键词</label>
+                    <input type="text" class="form-control" id="searchQuery" 
+                           placeholder="如：高血压急症处理" value="高血压急症处理">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">数据源过滤</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="includePdf" checked>
+                        <label class="form-check-label">PDF文档</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="includeExcel" checked>
+                        <label class="form-check-label">Excel数据</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="includeMysql" checked>
+                        <label class="form-check-label">MySQL数据库</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-100" onclick="performSearch()">
+                    <i class="bi bi-search me-2"></i>开始检索
+                </button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-calendar-check me-2"></i>指南时效性验证
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">更新日期截止</label>
+                    <input type="date" class="form-control" id="dateFilter" value="2025-07-20">
+                </div>
+                <button class="btn btn-outline-primary w-100" onclick="validateTimeliness()">
+                    <i class="bi bi-clock-history me-2"></i>验证时效性
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-list-check me-2"></i>检索结果</span>
+                <span class="badge bg-primary" id="resultCount">0 条结果</span>
+            </div>
+            <div class="card-body" id="searchResults">
+                <div class="text-center text-muted py-5">
+                    <i class="bi bi-search" style="font-size: 3rem;"></i>
+                    <p class="mt-3">输入关键词开始检索</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function performSearch() {
+    const query = document.getElementById('searchQuery').value.trim();
+    if (!query) {
+        alert('请输入检索关键词');
+        return;
+    }
+    
+    const container = document.getElementById('searchResults');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在检索...</p></div>';
+    
+    fetch('/api/search', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            query: query,
+            include_pdf: document.getElementById('includePdf').checked,
+            include_excel: document.getElementById('includeExcel').checked,
+            include_mysql: document.getElementById('includeMysql').checked
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            renderResults(data.data);
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+        }
+    })
+    .catch(error => {
+        container.innerHTML = '<div class="alert alert-danger">检索失败，请稍后重试</div>';
+    });
+}
+
+function renderResults(data) {
+    const container = document.getElementById('searchResults');
+    document.getElementById('resultCount').textContent = `${data.total_count} 条结果`;
+    
+    if (data.total_count === 0) {
+        container.innerHTML = '<div class="alert alert-warning">未找到相关结果</div>';
+        return;
+    }
+    
+    let html = '';
+    
+    // 术语映射提示
+    if (data.term_replacements && data.term_replacements.length > 0) {
+        html += '<div class="alert alert-info-custom mb-3"><i class="bi bi-info-circle me-2"></i>术语标准化：';
+        data.term_replacements.forEach(r => {
+            html += `<span class="badge bg-info me-1">${r.original} → ${r.normalized}</span>`;
+        });
+        html += '</div>';
+    }
+    
+    // PDF结果
+    if (data.pdf_results && data.pdf_results.length > 0) {
+        html += `<h6 class="mb-3"><span class="source-tag pdf">📄 PDF文档</span> (${data.pdf_results.length}条)</h6>`;
+        data.pdf_results.forEach(hit => {
+            html += `
+                <div class="card mb-2">
+                    <div class="card-body p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <small class="text-muted">${hit.source?.filename || ''} 第${hit.source?.page || ''}页</small>
+                            <span class="badge bg-secondary">${(hit.score * 100).toFixed(0)}%</span>
+                        </div>
+                        <p class="mb-0 small">${hit.content?.substring(0, 300)}...</p>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    // Excel结果
+    if (data.excel_results && data.excel_results.length > 0) {
+        html += `<h6 class="mb-3 mt-4"><span class="source-tag excel">📊 Excel数据</span> (${data.excel_results.length}条)</h6>`;
+        data.excel_results.forEach(hit => {
+            html += `
+                <div class="card mb-2">
+                    <div class="card-body p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <small class="text-muted">${hit.source?.filename || ''} 第${hit.source?.row || ''}行</small>
+                            <span class="badge bg-secondary">${(hit.score * 100).toFixed(0)}%</span>
+                        </div>
+                        <p class="mb-0 small">${hit.content?.substring(0, 300)}...</p>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    // MySQL结果
+    if (data.mysql_results && data.mysql_results.length > 0) {
+        html += `<h6 class="mb-3 mt-4"><span class="source-tag mysql">🗄️ MySQL数据库</span> (${data.mysql_results.length}条)</h6>`;
+        data.mysql_results.forEach(hit => {
+            let evidence = hit.evidence_level ? `<span class="badge bg-success me-2">${hit.evidence_level}</span>` : '';
+            html += `
+                <div class="card mb-2">
+                    <div class="card-body p-3">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <small class="text-muted">${hit.source?.table || ''}</small>
+                            ${evidence}
+                        </div>
+                        <p class="mb-0 small">${hit.content}</p>
+                    </div>
+                </div>
+            `;
+        });
+    }
+    
+    container.innerHTML = html;
+}
+
+function validateTimeliness() {
+    const dateAfter = document.getElementById('dateFilter').value;
+    const container = document.getElementById('searchResults');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在验证指南时效性...</p></div>';
+    
+    fetch('/api/guidelines/timeliness', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({date_after: dateAfter})
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const guidelines = data.data;
+            document.getElementById('resultCount').textContent = `${guidelines.length} 条符合条件`;
+            
+            if (guidelines.length === 0) {
+                container.innerHTML = `<div class="alert alert-info">没有找到 ${dateAfter} 之后更新的指南</div>`;
+                return;
+            }
+            
+            let html = `<div class="alert alert-success-custom mb-3">
+                <i class="bi bi-check-circle me-2"></i>找到 ${guidelines.length} 条 ${dateAfter} 之后更新的指南推荐
+            </div>`;
+            
+            guidelines.forEach(g => {
+                html += `
+                    <div class="card mb-2">
+                        <div class="card-body p-3">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <strong>${g.guideline_name}</strong>
+                                <span class="badge bg-success">${g.recommendation_level}</span>
+                            </div>
+                            <p class="small mb-2">${g.recommendation_content}</p>
+                            <div class="d-flex gap-2">
+                                <span class="badge bg-light text-dark">${g.disease_type}</span>
+                                <span class="badge bg-light text-dark">更新日期: ${g.update_date}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+        }
+    })
+    .catch(error => {
+        container.innerHTML = '<div class="alert alert-danger">验证失败，请稍后重试</div>';
+    });
+}
+
+document.getElementById('searchQuery').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') performSearch();
+});
+</script>
+{% endblock %}
+

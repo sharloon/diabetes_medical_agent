@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block title %}循证医学支持 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-journal-medical me-2"></i>循证医学支持</h2>
+        <p class="page-subtitle">证据等级标注、多源知识融合</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="bi bi-search me-2"></i>循证检索
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">临床问题</label>
+                    <textarea class="form-control" id="evidenceQuery" rows="3" 
+                              placeholder="输入临床问题，如：高血压合并糖尿病的治疗方案">高血压合并糖尿病患者的降压药物选择</textarea>
+                </div>
+                <button class="btn btn-primary w-100" onclick="searchEvidence()">
+                    <i class="bi bi-search me-2"></i>检索证据
+                </button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-info-circle me-2"></i>证据等级说明
+            </div>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <tr><td><span class="badge bg-success">ⅠA</span></td><td>证据充分，强烈推荐</td></tr>
+                    <tr><td><span class="badge bg-primary">ⅠB</span></td><td>证据较充分，推荐</td></tr>
+                    <tr><td><span class="badge bg-info">ⅡA</span></td><td>证据有限，可以考虑</td></tr>
+                    <tr><td><span class="badge bg-warning">ⅡB</span></td><td>证据不足，可能有益</td></tr>
+                    <tr><td><span class="badge bg-secondary">Ⅲ</span></td><td>证据不足或有害，不推荐</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-file-medical me-2"></i>循证检索结果
+            </div>
+            <div class="card-body" id="evidenceResult">
+                <div class="text-center text-muted py-5">
+                    <i class="bi bi-journal-medical" style="font-size: 3rem;"></i>
+                    <p class="mt-3">输入临床问题进行循证检索</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function searchEvidence() {
+    const query = document.getElementById('evidenceQuery').value.trim();
+    if (!query) {
+        alert('请输入临床问题');
+        return;
+    }
+    
+    const container = document.getElementById('evidenceResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在检索循证依据...</p></div>';
+    
+    fetch('/api/evidence/search', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({query: query})
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            renderEvidenceResults(data.data);
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+        }
+    });
+}
+
+function renderEvidenceResults(data) {
+    const container = document.getElementById('evidenceResult');
+    const searchResults = data.search_results;
+    const answer = data.answer;
+    
+    let html = '';
+    
+    // 综合建议
+    if (answer && answer.answer) {
+        html += `
+            <div class="card mb-4 border-primary">
+                <div class="card-header bg-primary text-white">
+                    <i class="bi bi-lightbulb me-2"></i>综合决策建议
+                </div>
+                <div class="card-body">
+                    ${renderMarkdown(answer.answer)}
+                </div>
+            </div>
+        `;
+    }
+    
+    // 知识融合过程
+    html += '<h5 class="mb-3"><i class="bi bi-diagram-3 me-2"></i>多源知识融合</h5>';
+    
+    // PDF指南
+    if (searchResults.pdf_results && searchResults.pdf_results.length > 0) {
+        html += `
+            <div class="card mb-3">
+                <div class="card-header bg-primary bg-opacity-10">
+                    <span class="source-tag pdf me-2">📄 PDF指南</span>
+                    <span class="badge bg-primary">${searchResults.pdf_results.length}条</span>
+                </div>
+                <div class="card-body">
+        `;
+        searchResults.pdf_results.forEach((hit, idx) => {
+            html += `
+                <div class="mb-3 pb-3 ${idx < searchResults.pdf_results.length - 1 ? 'border-bottom' : ''}">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <small class="text-muted">${hit.source?.filename || ''} 第${hit.source?.page || ''}页</small>
+                        <span class="badge bg-secondary">${(hit.score * 100).toFixed(0)}% 相关</span>
+                    </div>
+                    <p class="mb-0 small">${hit.content?.substring(0, 400)}...</p>
+                </div>
+            `;
+        });
+        html += '</div></div>';
+    }
+    
+    // MySQL指南推荐
+    if (searchResults.mysql_results && searchResults.mysql_results.length > 0) {
+        html += `
+            <div class="card mb-3">
+                <div class="card-header bg-warning bg-opacity-10">
+                    <span class="source-tag mysql me-2">🗄️ 指南推荐</span>
+                    <span class="badge bg-warning text-dark">${searchResults.mysql_results.length}条</span>
+                </div>
+                <div class="card-body">
+        `;
+        searchResults.mysql_results.forEach((hit, idx) => {
+            let evidenceBadge = '';
+            if (hit.evidence_level) {
+                const badgeClass = hit.evidence_level.includes('Ⅰ') ? 'bg-success' : 
+                                   hit.evidence_level.includes('Ⅱ') ? 'bg-info' : 'bg-secondary';
+                evidenceBadge = `<span class="badge ${badgeClass} me-2">${hit.evidence_level}</span>`;
+            }
+            html += `
+                <div class="mb-3 pb-3 ${idx < searchResults.mysql_results.length - 1 ? 'border-bottom' : ''}">
+                    <div class="d-flex align-items-center mb-2">
+                        ${evidenceBadge}
+                        <small class="text-muted">${hit.source?.table || ''}</small>
+                    </div>
+                    <p class="mb-0">${hit.content}</p>
+                </div>
+            `;
+        });
+        html += '</div></div>';
+    }
+    
+    // 来源引用
+    if (answer && answer.sources && answer.sources.length > 0) {
+        html += '<h6 class="mt-4">参考来源</h6><div class="d-flex flex-wrap gap-2">';
+        answer.sources.forEach(source => {
+            html += formatSource(source);
+        });
+        html += '</div>';
+    }
+    
+    container.innerHTML = html;
+}
+</script>
+{% endblock %}
+

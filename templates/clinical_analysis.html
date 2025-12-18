@@ -1,0 +1,393 @@
+{% extends 'base.html' %}
+
+{% block title %}临床数据查询与分析 - 糖尿病智能诊断助手{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="page-title"><i class="bi bi-person-badge me-2"></i>临床数据查询与分析</h2>
+        <p class="page-subtitle">患者画像构建、风险分层评估、用药冲突检测</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="bi bi-search me-2"></i>患者查询
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label class="form-label">患者ID</label>
+                    <input type="text" class="form-control" id="patientId" 
+                           placeholder="输入患者ID" value="">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" onclick="loadPatientProfile()">
+                        <i class="bi bi-person me-2"></i>构建患者画像
+                    </button>
+                    <button class="btn btn-outline-primary" onclick="assessRisk()">
+                        <i class="bi bi-graph-up me-2"></i>风险分层评估
+                    </button>
+                    <button class="btn btn-outline-warning" onclick="checkDrugConflicts()">
+                        <i class="bi bi-exclamation-triangle me-2"></i>用药冲突检测
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-people me-2"></i>快速选择患者
+            </div>
+            <div class="card-body p-0">
+                <div id="patientList" class="list-group list-group-flush" style="max-height: 300px; overflow-y: auto;">
+                    <div class="text-center py-3">
+                        <div class="loading"><span></span><span></span><span></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                <i class="bi bi-clipboard-data me-2"></i>分析结果
+            </div>
+            <div class="card-body" id="analysisResult">
+                <div class="text-center text-muted py-5">
+                    <i class="bi bi-person-plus" style="font-size: 3rem;"></i>
+                    <p class="mt-3">请输入患者ID或从列表中选择患者</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadPatientList();
+    
+    // 检查URL参数
+    const urlParams = new URLSearchParams(window.location.search);
+    const patientId = urlParams.get('patient_id');
+    if (patientId) {
+        document.getElementById('patientId').value = patientId;
+        loadPatientProfile();
+    }
+});
+
+function loadPatientList() {
+    fetch('/api/patients')
+    .then(response => response.json())
+    .then(data => {
+        const container = document.getElementById('patientList');
+        if (data.success && data.data.length > 0) {
+            let html = '';
+            data.data.slice(0, 20).forEach(p => {
+                let riskBadge = '';
+                if (p.hypertension_risk) {
+                    const badgeClass = p.hypertension_risk === '高危' || p.hypertension_risk === '很高危' 
+                        ? 'badge-risk-high' : p.hypertension_risk === '中危' ? 'badge-risk-medium' : 'badge-risk-low';
+                    riskBadge = `<span class="badge ${badgeClass}">${p.hypertension_risk}</span>`;
+                }
+                html += `
+                    <button class="list-group-item list-group-item-action" 
+                            onclick="selectPatient('${p.patient_id}')">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <div class="fw-bold">${p.name || p.patient_id}</div>
+                                <small class="text-muted">${p.gender || ''} ${p.age || ''}岁</small>
+                            </div>
+                            ${riskBadge}
+                        </div>
+                    </button>
+                `;
+            });
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = '<div class="p-3 text-muted">暂无患者数据</div>';
+        }
+    });
+}
+
+function selectPatient(patientId) {
+    document.getElementById('patientId').value = patientId;
+    loadPatientProfile();
+}
+
+function loadPatientProfile() {
+    const patientId = document.getElementById('patientId').value.trim();
+    if (!patientId) {
+        alert('请输入患者ID');
+        return;
+    }
+    
+    const container = document.getElementById('analysisResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在构建患者画像...</p></div>';
+    
+    fetch(`/api/patient/profile/${encodeURIComponent(patientId)}`)
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.data.success) {
+            renderPatientProfile(data.data);
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.data?.error || data.error || '未找到患者'}</div>`;
+        }
+    })
+    .catch(error => {
+        container.innerHTML = '<div class="alert alert-danger">加载失败，请稍后重试</div>';
+    });
+}
+
+function renderPatientProfile(profile) {
+    const container = document.getElementById('analysisResult');
+    
+    let html = `
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h5><i class="bi bi-person me-2"></i>基本信息</h5>
+                <table class="table table-sm">
+                    <tr><td class="fw-bold" style="width:100px">患者ID</td><td>${profile.patient_id}</td></tr>
+                    <tr><td class="fw-bold">姓名</td><td>${profile.name || 'N/A'}</td></tr>
+                    <tr><td class="fw-bold">性别</td><td>${profile.gender || 'N/A'}</td></tr>
+                    <tr><td class="fw-bold">年龄</td><td>${profile.age || 'N/A'}岁</td></tr>
+                    <tr><td class="fw-bold">身高</td><td>${profile.height_cm || 'N/A'} cm</td></tr>
+                    <tr><td class="fw-bold">体重</td><td>${profile.weight_kg || 'N/A'} kg</td></tr>
+                    <tr><td class="fw-bold">BMI</td><td>${profile.bmi || 'N/A'}</td></tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+    `;
+    
+    // 风险评估摘要
+    if (profile.risk_assessment) {
+        const ra = profile.risk_assessment;
+        const riskClass = ra.overall_risk_level === '高危' || ra.overall_risk_level === '很高危' 
+            ? 'danger' : ra.overall_risk_level === '中危' ? 'warning' : 'success';
+        
+        html += `
+            <h5><i class="bi bi-graph-up me-2"></i>风险评估</h5>
+            <div class="alert alert-${riskClass}">
+                <div class="d-flex justify-content-between align-items-center">
+                    <strong>总体风险等级</strong>
+                    <span class="badge bg-${riskClass}">${ra.overall_risk_level}</span>
+                </div>
+            </div>
+            <p class="small"><strong>危险因素：</strong>${ra.risk_factors?.join(', ') || '无'}</p>
+        `;
+    }
+    
+    html += '</div></div>';
+    
+    // 高血压评估
+    if (profile.hypertension_assessment) {
+        const ha = profile.hypertension_assessment;
+        html += `
+            <div class="card mb-3">
+                <div class="card-header bg-primary bg-opacity-10">
+                    <i class="bi bi-heart-pulse me-2"></i>高血压评估
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>血压：</strong>${ha.sbp}/${ha.dbp} mmHg</p>
+                            <p><strong>心率：</strong>${ha.heart_rate || 'N/A'} 次/分</p>
+                            <p><strong>风险等级：</strong><span class="badge bg-primary">${ha.risk_level}</span></p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>危险因素：</strong>${ha.risk_factors || '无'}</p>
+                            <p><strong>靶器官损害：</strong>${ha.target_organs_damage || '无'}</p>
+                            <p><strong>随访计划：</strong>${ha.follow_up_plan || 'N/A'}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // 糖尿病评估
+    if (profile.diabetes_assessment) {
+        const da = profile.diabetes_assessment;
+        html += `
+            <div class="card mb-3">
+                <div class="card-header bg-success bg-opacity-10">
+                    <i class="bi bi-droplet me-2"></i>糖尿病评估
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>空腹血糖：</strong>${da.fasting_glucose || 'N/A'} mmol/L</p>
+                            <p><strong>餐后血糖：</strong>${da.postprandial_glucose || 'N/A'} mmol/L</p>
+                            <p><strong>HbA1c：</strong>${da.hba1c || 'N/A'}%</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>控制状态：</strong><span class="badge bg-success">${da.control_status}</span></p>
+                            <p><strong>胰岛素使用：</strong>${da.insulin_usage ? '是' : '否'}</p>
+                            <p><strong>并发症：</strong>${da.complications || '无'}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // 用药记录
+    if (profile.medications && profile.medications.length > 0) {
+        html += `
+            <div class="card mb-3">
+                <div class="card-header bg-warning bg-opacity-10">
+                    <i class="bi bi-capsule me-2"></i>用药记录 (${profile.medications.length}条)
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <thead><tr><th>药物名称</th><th>类别</th><th>剂量</th><th>频次</th></tr></thead>
+                        <tbody>
+        `;
+        profile.medications.slice(0, 10).forEach(med => {
+            html += `<tr><td>${med.drug_name}</td><td>${med.drug_class || '-'}</td><td>${med.dosage || '-'}</td><td>${med.frequency || '-'}</td></tr>`;
+        });
+        html += '</tbody></table></div></div>';
+    }
+    
+    // 安全检查警告
+    if (profile.safety_check && !profile.safety_check.is_safe) {
+        html += '<div class="alert alert-danger-custom"><strong>⚠️ 安全警告</strong><ul class="mb-0 mt-2">';
+        profile.safety_check.emergency_alerts?.forEach(a => {
+            html += `<li>${a.message}</li>`;
+        });
+        profile.safety_check.contraindications?.forEach(c => {
+            html += `<li>${c.message}</li>`;
+        });
+        html += '</ul></div>';
+    }
+    
+    container.innerHTML = html;
+}
+
+function assessRisk() {
+    const patientId = document.getElementById('patientId').value.trim();
+    if (!patientId) {
+        alert('请输入患者ID');
+        return;
+    }
+    
+    const container = document.getElementById('analysisResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在进行风险分层评估...</p></div>';
+    
+    fetch(`/api/patient/risk/${encodeURIComponent(patientId)}`)
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.data.success) {
+            const result = data.data;
+            let html = `
+                <h5><i class="bi bi-graph-up me-2"></i>风险分层评估结果</h5>
+                <div class="alert alert-info-custom mb-3">
+                    <strong>总体风险等级：</strong>
+                    <span class="badge bg-primary ms-2">${result.assessment?.overall_risk_level}</span>
+                </div>
+            `;
+            
+            // 评估逻辑
+            if (result.assessment?.hypertension_risk?.evaluation_logic) {
+                html += '<h6>高血压评估逻辑</h6><ul>';
+                result.assessment.hypertension_risk.evaluation_logic.forEach(logic => {
+                    html += `<li>${logic}</li>`;
+                });
+                html += '</ul>';
+            }
+            
+            // 随访计划
+            if (result.assessment?.follow_up_plan) {
+                const plan = result.assessment.follow_up_plan;
+                html += `
+                    <h6 class="mt-4">随访计划</h6>
+                    <div class="card">
+                        <div class="card-body">
+                            <p><strong>随访频率：</strong>${plan.frequency}</p>
+                            <p><strong>下次随访：</strong>${plan.next_visit}</p>
+                            <p><strong>监测指标：</strong>${plan.monitoring_items?.join(', ')}</p>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // LLM解读
+            if (result.interpretation) {
+                html += `<h6 class="mt-4">智能解读</h6><div class="bg-light p-3 rounded">${renderMarkdown(result.interpretation)}</div>`;
+            }
+            
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.data?.error || '评估失败'}</div>`;
+        }
+    });
+}
+
+function checkDrugConflicts() {
+    const patientId = document.getElementById('patientId').value.trim();
+    if (!patientId) {
+        alert('请输入患者ID');
+        return;
+    }
+    
+    const container = document.getElementById('analysisResult');
+    container.innerHTML = '<div class="text-center py-5"><div class="loading"><span></span><span></span><span></span></div><p class="mt-3">正在检测用药冲突...</p></div>';
+    
+    fetch(`/api/patient/drug-check/${encodeURIComponent(patientId)}`)
+    .then(response => response.json())
+    .then(data => {
+        if (data.success && data.data.success) {
+            const result = data.data;
+            let html = '<h5><i class="bi bi-exclamation-triangle me-2"></i>用药冲突检测结果</h5>';
+            
+            if (result.has_conflicts) {
+                html += '<div class="alert alert-danger-custom"><strong>⚠️ 发现潜在风险</strong></div>';
+            } else {
+                html += '<div class="alert alert-success-custom"><strong>✓ 未发现明显用药冲突</strong></div>';
+            }
+            
+            // 当前用药
+            if (result.current_medications && result.current_medications.length > 0) {
+                html += '<h6 class="mt-3">当前用药</h6><ul>';
+                result.current_medications.forEach(med => {
+                    html += `<li>${med.drug_name} ${med.dosage || ''} ${med.frequency || ''}</li>`;
+                });
+                html += '</ul>';
+            }
+            
+            // 禁忌症
+            if (result.safety_check?.contraindications?.length > 0) {
+                html += '<h6 class="mt-3 text-danger">禁忌症警告</h6><ul class="text-danger">';
+                result.safety_check.contraindications.forEach(c => {
+                    html += `<li>${c.message}</li>`;
+                });
+                html += '</ul>';
+            }
+            
+            // 相互作用
+            if (result.safety_check?.interactions?.length > 0) {
+                html += '<h6 class="mt-3 text-warning">药物相互作用</h6><ul class="text-warning">';
+                result.safety_check.interactions.forEach(i => {
+                    html += `<li>${i.message}</li>`;
+                });
+                html += '</ul>';
+            }
+            
+            // LLM分析
+            if (result.analysis) {
+                html += `<h6 class="mt-4">智能分析</h6><div class="bg-light p-3 rounded">${renderMarkdown(result.analysis)}</div>`;
+            }
+            
+            container.innerHTML = html;
+        } else {
+            container.innerHTML = `<div class="alert alert-danger">${data.data?.error || '检测失败'}</div>`;
+        }
+    });
+}
+</script>
+{% endblock %}
+
