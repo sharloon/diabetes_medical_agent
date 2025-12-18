@@ -11,6 +11,30 @@ import time
 from config import MYSQL_CONFIG
 
 
+# 全局模拟开关
+_simulate_db_failure = False
+
+
+def set_simulate_db_failure(enabled: bool):
+    """设置是否模拟数据库连接失败"""
+    global _simulate_db_failure
+    _simulate_db_failure = enabled
+    logger.warning(f"数据库连接失败模拟已{'开启' if enabled else '关闭'}")
+
+
+def get_simulate_db_failure() -> bool:
+    """获取数据库连接失败模拟状态"""
+    return _simulate_db_failure
+
+
+class DatabaseConnectionError(Exception):
+    """数据库连接异常"""
+    def __init__(self, message: str = "数据库连接失败", original_error: Exception = None):
+        self.message = message
+        self.original_error = original_error
+        super().__init__(self.message)
+
+
 class DatabaseService:
     """MySQL数据库服务"""
     
@@ -22,6 +46,14 @@ class DatabaseService:
     @contextmanager
     def get_connection(self):
         """获取数据库连接（上下文管理器）"""
+        # 检查是否模拟数据库连接失败
+        if _simulate_db_failure:
+            logger.error("【模拟】数据库连接失败 - 模拟模式已开启")
+            raise DatabaseConnectionError(
+                message="数据库连接失败：无法连接到MySQL服务器 (模拟模式)",
+                original_error=Exception("Connection refused - simulated failure")
+            )
+        
         connection = None
         try:
             connection = pymysql.connect(
@@ -36,7 +68,10 @@ class DatabaseService:
             yield connection
         except pymysql.Error as e:
             logger.error(f"数据库连接失败: {e}")
-            raise
+            raise DatabaseConnectionError(
+                message=f"数据库连接失败：{str(e)}",
+                original_error=e
+            )
         finally:
             if connection:
                 connection.close()
@@ -54,6 +89,9 @@ class DatabaseService:
             logger.info(f"SQL查询执行成功，耗时: {execution_time}ms, SQL: {sql[:200]}...")
             return results
             
+        except DatabaseConnectionError:
+            # 重新抛出连接错误，让上层处理
+            raise
         except pymysql.Error as e:
             logger.error(f"SQL查询失败: {e}, SQL: {sql}")
             raise

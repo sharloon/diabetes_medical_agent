@@ -108,10 +108,93 @@ function loadPatientList() {
                 `;
             });
             container.innerHTML = html;
+        } else if (data.degraded) {
+            // 显示降级模式提示
+            container.innerHTML = `
+                <div class="p-3">
+                    <div class="alert alert-warning mb-2">
+                        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        <strong>数据库服务暂时不可用</strong>
+                    </div>
+                    <small class="text-muted">${data.error}</small>
+                </div>
+            `;
+            // 在主结果区显示完整降级信息
+            showDegradedModeUI(data);
         } else {
             container.innerHTML = '<div class="p-3 text-muted">暂无患者数据</div>';
         }
+    })
+    .catch(error => {
+        document.getElementById('patientList').innerHTML = `
+            <div class="p-3 text-danger">
+                <i class="bi bi-x-circle me-2"></i>加载失败
+            </div>
+        `;
     });
+}
+
+function showDegradedModeUI(data) {
+    const container = document.getElementById('analysisResult');
+    container.innerHTML = `
+        <div class="alert alert-warning">
+            <h5 class="alert-heading">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                系统已进入降级模式
+            </h5>
+            <hr>
+            <p class="mb-0"><strong>错误类型：</strong>${data.error_type || '数据库连接异常'}</p>
+            <p><strong>错误详情：</strong>${data.error}</p>
+        </div>
+        <div class="card mb-3">
+            <div class="card-header bg-info bg-opacity-10">
+                <i class="bi bi-info-circle me-2"></i>降级提示
+            </div>
+            <div class="card-body">
+                <pre class="mb-0" style="white-space: pre-wrap; font-family: inherit;">${data.fallback_message || '数据库服务暂时不可用，请联系管理员。'}</pre>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card border-success">
+                    <div class="card-header bg-success bg-opacity-10">
+                        <i class="bi bi-check-circle me-2"></i>可用功能
+                    </div>
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            <li><a href="/pdf_knowledge">PDF知识库检索</a></li>
+                            <li><a href="/excel_analysis">Excel数据分析</a></li>
+                            <li><a href="/term_mapping">术语映射查询</a></li>
+                            <li><a href="/chat">智能对话（基于知识库）</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card border-danger">
+                    <div class="card-header bg-danger bg-opacity-10">
+                        <i class="bi bi-x-circle me-2"></i>暂不可用功能
+                    </div>
+                    <div class="card-body">
+                        <ul class="mb-0">
+                            <li>患者信息查询</li>
+                            <li>临床数据分析</li>
+                            <li>个性化诊疗决策</li>
+                            <li>安全用药检查</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button class="btn btn-outline-primary" onclick="location.reload()">
+                <i class="bi bi-arrow-clockwise me-2"></i>重新尝试连接
+            </button>
+            <a href="/system_admin" class="btn btn-outline-secondary ms-2">
+                <i class="bi bi-gear me-2"></i>系统运维
+            </a>
+        </div>
+    `;
 }
 
 function selectPatient(patientId) {
@@ -134,6 +217,9 @@ function loadPatientProfile() {
     .then(data => {
         if (data.success && data.data.success) {
             renderPatientProfile(data.data);
+        } else if (data.degraded) {
+            // 显示降级模式提示
+            showDegradedModeUI(data);
         } else {
             container.innerHTML = `<div class="alert alert-danger">${data.data?.error || data.error || '未找到患者'}</div>`;
         }

@@ -11,7 +11,7 @@ from loguru import logger
 from config import LOG_DIR
 from utils import setup_logger
 from llm_client import get_llm_client
-from db_service import get_db_service
+from db_service import get_db_service, DatabaseConnectionError, set_simulate_db_failure, get_simulate_db_failure
 from rag_service import get_rag_service
 from vector_store import get_vector_store, init_vector_store
 from term_mapper import get_term_mapper
@@ -245,6 +245,27 @@ def api_patient_profile(patient_id):
         agent = get_diagnosis_agent()
         profile = agent.build_patient_profile(patient_id)
         return jsonify({'success': True, 'data': profile})
+    except DatabaseConnectionError as e:
+        logger.error(f"获取患者画像失败 - 数据库连接异常: {e.message}")
+        return jsonify({
+            'success': False, 
+            'error': e.message,
+            'error_type': 'database_connection',
+            'degraded': True,
+            'fallback_message': '⚠️ 数据库连接失败\n\n'
+                               '无法获取患者数据，系统已自动进入降级模式。\n\n'
+                               '【可用功能】\n'
+                               '• 基于知识库的医学问答\n'
+                               '• PDF指南检索\n'
+                               '• Excel统计分析\n\n'
+                               '【不可用功能】\n'
+                               '• 患者信息查询\n'
+                               '• 临床数据分析\n'
+                               '• 个性化诊疗决策\n\n'
+                               '请联系管理员恢复数据库服务。',
+            'available_features': ['pdf_search', 'excel_analysis', 'term_mapping', 'knowledge_chat'],
+            'unavailable_features': ['patient_query', 'clinical_analysis', 'personalized_diagnosis']
+        })
     except Exception as e:
         logger.error(f"获取患者画像失败: {e}")
         return jsonify({'success': False, 'error': str(e)})
@@ -278,6 +299,20 @@ def api_patients():
         db_service = get_db_service()
         patients = db_service.search_patients(limit=100)
         return jsonify({'success': True, 'data': patients})
+    except DatabaseConnectionError as e:
+        logger.error(f"获取患者列表失败 - 数据库连接异常: {e.message}")
+        return jsonify({
+            'success': False, 
+            'error': e.message,
+            'error_type': 'database_connection',
+            'degraded': True,
+            'fallback_message': '数据库服务暂时不可用，系统已进入降级模式。您可以使用以下功能：\n'
+                               '• PDF知识库检索\n'
+                               '• Excel数据分析\n'
+                               '• 术语映射查询\n'
+                               '• 智能对话（基于知识库）\n\n'
+                               '请联系系统管理员检查数据库连接。'
+        })
     except Exception as e:
         logger.error(f"获取患者列表失败: {e}")
         return jsonify({'success': False, 'error': str(e)})
@@ -416,6 +451,22 @@ def api_safety_check():
                 'report': report
             }
         })
+    except DatabaseConnectionError as e:
+        logger.error(f"安全检查失败 - 数据库连接异常: {e.message}")
+        return jsonify({
+            'success': False, 
+            'error': e.message,
+            'error_type': 'database_connection',
+            'degraded': True,
+            'fallback_message': '⚠️ 数据库连接失败，安全检查功能暂时不可用\n\n'
+                               '【重要提示】\n'
+                               '在数据库恢复之前，请人工核查以下安全要点：\n'
+                               '• 孕妇禁用ACEI/ARB类药物\n'
+                               '• 高血压急症(SBP≥180)需立即转诊\n'
+                               '• 注意药物相互作用\n'
+                               '• 老年患者需要调整剂量\n\n'
+                               '如需紧急安全评估，请联系值班医师。'
+        })
     except Exception as e:
         logger.error(f"安全检查失败: {e}")
         return jsonify({'success': False, 'error': str(e)})
@@ -477,19 +528,64 @@ def api_system_status():
         vector_store = get_vector_store()
         db_service = get_db_service()
         
+        # 检查数据库连接（考虑模拟模式）
+        db_connected = False
+        db_error = None
+        try:
+            if not get_simulate_db_failure():
+                db_connected = db_service.test_connection()
+            else:
+                db_error = "数据库连接失败模拟已开启"
+        except DatabaseConnectionError as e:
+            db_error = str(e.message)
+        except Exception as e:
+            db_error = str(e)
+        
         return jsonify({
             'success': True,
             'data': {
                 'scheduler': scheduler.get_status(),
                 'vector_store': vector_store.get_index_info(),
                 'database': {
-                    'connected': db_service.test_connection()
+                    'connected': db_connected,
+                    'simulate_failure': get_simulate_db_failure(),
+                    'error': db_error
                 }
             }
         })
     except Exception as e:
         logger.error(f"获取系统状态失败: {e}")
         return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/system/simulate-db-failure', methods=['POST'])
+def api_simulate_db_failure():
+    """模拟数据库连接失败开关"""
+    try:
+        data = request.json
+        enabled = data.get('enabled', False)
+        
+        set_simulate_db_failure(enabled)
+        
+        return jsonify({
+            'success': True,
+            'data': {
+                'simulate_failure': enabled,
+                'message': f"数据库连接失败模拟已{'开启' if enabled else '关闭'}"
+            }
+        })
+    except Exception as e:
+        logger.error(f"设置模拟状态失败: {e}")
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/api/system/db-failure-status')
+def api_db_failure_status():
+    """获取数据库连接失败模拟状态"""
+    return jsonify({
+        'success': True,
+        'data': {
+            'simulate_failure': get_simulate_db_failure()
+        }
+    })
 
 @app.route('/api/system/rebuild-index', methods=['POST'])
 def api_rebuild_index():

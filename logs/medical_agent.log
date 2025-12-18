@@ -2993,3 +2993,342 @@ embeddings.24
 2025-12-18 18:01:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:01:25.213647
 2025-12-18 18:01:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
 2025-12-18 18:02:09 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 18:02:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:02:49.073011
+2025-12-18 18:02:49 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 18:55:01 | INFO     | app:init_app:548 - ==================================================
+2025-12-18 18:55:01 | INFO     | app:init_app:549 - 糖尿病智能诊断助手启动中...
+2025-12-18 18:55:01 | INFO     | app:init_app:550 - ==================================================
+2025-12-18 18:55:01 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 18:55:02 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 18:55:02 | INFO     | app:init_app:562 - ✓ 数据库连接成功
+2025-12-18 18:55:03 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 18:55:04 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 17:47:12.684003
+2025-12-18 18:55:04 | INFO     | app:init_app:571 - ✓ 向量存储初始化完成
+2025-12-18 18:55:04 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 18:55:04 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 18:55:04 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:55:04.867915
+2025-12-18 18:55:04 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 18:55:07 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 18:55:10 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 18:55:10 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 18:55:11 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 18:55:11 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 18:55:11 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 18:55:27 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 18:55:27 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 18:55:27.990868
+2025-12-18 18:55:27 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 23.12秒，累计更新次数: 1
+2025-12-18 18:55:27 | INFO     | app:init_app:578 - ✓ 定时任务调度器启动
+2025-12-18 18:55:27 | INFO     | app:init_app:582 - ==================================================
+2025-12-18 18:55:27 | INFO     | app:init_app:583 - 应用初始化完成!
+2025-12-18 18:55:27 | INFO     | app:init_app:584 - ==================================================
+2025-12-18 18:55:39 | INFO     | app:init_app:548 - ==================================================
+2025-12-18 18:55:39 | INFO     | app:init_app:549 - 糖尿病智能诊断助手启动中...
+2025-12-18 18:55:39 | INFO     | app:init_app:550 - ==================================================
+2025-12-18 18:55:39 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 18:55:40 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 18:55:40 | INFO     | app:init_app:562 - ✓ 数据库连接成功
+2025-12-18 18:55:40 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 18:55:42 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 18:55:27.195893
+2025-12-18 18:55:42 | INFO     | app:init_app:571 - ✓ 向量存储初始化完成
+2025-12-18 18:55:42 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 18:55:42 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 18:55:42 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:55:42.377639
+2025-12-18 18:55:42 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 18:55:45 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 18:55:48 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 18:55:48 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 18:55:48 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 18:55:49 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 18:55:49 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 18:56:05 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 18:56:05 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 18:56:05.045337
+2025-12-18 18:56:05 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 22.67秒，累计更新次数: 1
+2025-12-18 18:56:05 | INFO     | app:init_app:578 - ✓ 定时任务调度器启动
+2025-12-18 18:56:05 | INFO     | app:init_app:582 - ==================================================
+2025-12-18 18:56:05 | INFO     | app:init_app:583 - 应用初始化完成!
+2025-12-18 18:56:05 | INFO     | app:init_app:584 - ==================================================
+2025-12-18 18:56:07 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 18:56:53 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 545ms, SQL: 
+        SELECT DISTINCT p.patient_id, p.name, p.gender, p.age, p.bmi,
+               h.sbp, h.dbp, h.risk_level as hypertension_risk,
+               d.hba1c, d.control_status as diabetes_status
+     ...
+2025-12-18 18:57:03 | INFO     | llm_client:__init__:24 - LLM客户端初始化完成，模型: qwen-plus-latest
+2025-12-18 18:57:04 | INFO     | term_mapper:__init__:23 - 术语映射器初始化完成，共30个映射
+2025-12-18 18:57:04 | INFO     | rag_service:__init__:25 - RAG服务初始化完成
+2025-12-18 18:57:04 | INFO     | risk_engine:__init__:17 - 风险评估引擎初始化完成
+2025-12-18 18:57:04 | INFO     | safety_guard:__init__:16 - 安全预警模块初始化完成
+2025-12-18 18:57:04 | INFO     | diagnosis_agent:__init__:28 - 诊疗决策智能体初始化完成
+2025-12-18 18:57:04 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1001_0_20210730
+2025-12-18 18:57:04 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1001_0_20210730
+2025-12-18 18:57:04 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:57:04.877407
+2025-12-18 18:57:04 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 18:57:05 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 502ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 18:57:05 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 813ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 18:57:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 579ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 18:57:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 488ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 18:57:07 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 486ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 18:57:07 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 529ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 18:57:07 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 2 条诊断, 2 条用药记录
+2025-12-18 18:57:07 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1001_0_20210730
+2025-12-18 18:57:07 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 18:57:07 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1001_0_20210730
+2025-12-18 18:57:07 | INFO     | safety_guard:check_all:71 - 安全检查完成，共0条警告，危急警告0条，是否安全: True
+2025-12-18 18:57:07 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 18:57:42 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:57:42.384470
+2025-12-18 18:57:42 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 18:59:04 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:59:04.868795
+2025-12-18 18:59:04 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 18:59:42 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:59:42.391010
+2025-12-18 18:59:42 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:01:04 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:01:04.877112
+2025-12-18 19:01:04 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:01:42 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:01:42.386399
+2025-12-18 19:01:42 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:03:04 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:03:04.870200
+2025-12-18 19:03:04 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:03:42 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:03:42.385073
+2025-12-18 19:03:42 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:04:16 | INFO     | app:init_app:548 - ==================================================
+2025-12-18 19:04:16 | INFO     | app:init_app:549 - 糖尿病智能诊断助手启动中...
+2025-12-18 19:04:16 | INFO     | app:init_app:550 - ==================================================
+2025-12-18 19:04:16 | INFO     | db_service:__init__:44 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 19:04:17 | INFO     | db_service:test_connection:283 - 数据库连接测试成功
+2025-12-18 19:04:17 | INFO     | app:init_app:562 - ✓ 数据库连接成功
+2025-12-18 19:04:18 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 19:04:20 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 18:56:04.135936
+2025-12-18 19:04:20 | INFO     | app:init_app:571 - ✓ 向量存储初始化完成
+2025-12-18 19:04:20 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 19:04:20 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 19:04:20 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:04:20.263155
+2025-12-18 19:04:20 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 19:04:23 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 19:04:27 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 19:04:27 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 19:04:28 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 19:04:28 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 19:04:28 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 19:04:44 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 19:04:44 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 19:04:44.845334
+2025-12-18 19:04:44 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 24.58秒，累计更新次数: 1
+2025-12-18 19:04:44 | INFO     | app:init_app:578 - ✓ 定时任务调度器启动
+2025-12-18 19:04:44 | INFO     | app:init_app:582 - ==================================================
+2025-12-18 19:04:44 | INFO     | app:init_app:583 - 应用初始化完成!
+2025-12-18 19:04:44 | INFO     | app:init_app:584 - ==================================================
+2025-12-18 19:05:04 | INFO     | app:init_app:607 - ==================================================
+2025-12-18 19:05:04 | INFO     | app:init_app:608 - 糖尿病智能诊断助手启动中...
+2025-12-18 19:05:04 | INFO     | app:init_app:609 - ==================================================
+2025-12-18 19:05:04 | INFO     | db_service:__init__:44 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 19:05:04 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:05:04.867110
+2025-12-18 19:05:04 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:05:05 | INFO     | db_service:test_connection:297 - 数据库连接测试成功
+2025-12-18 19:05:05 | INFO     | app:init_app:621 - ✓ 数据库连接成功
+2025-12-18 19:05:05 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 19:05:07 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 19:04:43.981472
+2025-12-18 19:05:07 | INFO     | app:init_app:630 - ✓ 向量存储初始化完成
+2025-12-18 19:05:07 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 19:05:07 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 19:05:07 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:05:07.509825
+2025-12-18 19:05:07 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 19:05:11 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 19:05:14 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 19:05:14 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 19:05:15 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 19:05:15 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 19:05:15 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 19:09:02 | INFO     | app:init_app:644 - ==================================================
+2025-12-18 19:09:02 | INFO     | app:init_app:645 - 糖尿病智能诊断助手启动中...
+2025-12-18 19:09:02 | INFO     | app:init_app:646 - ==================================================
+2025-12-18 19:09:02 | INFO     | db_service:__init__:44 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 19:09:03 | INFO     | db_service:test_connection:297 - 数据库连接测试成功
+2025-12-18 19:09:03 | INFO     | app:init_app:658 - ✓ 数据库连接成功
+2025-12-18 19:09:03 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 19:09:05 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 19:04:43.981472
+2025-12-18 19:09:05 | INFO     | app:init_app:667 - ✓ 向量存储初始化完成
+2025-12-18 19:09:05 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 19:09:05 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 19:09:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:09:05.335964
+2025-12-18 19:09:05 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 19:09:08 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 19:09:11 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 19:09:11 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 19:09:12 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 19:09:12 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 19:09:12 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 19:09:28 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 19:09:28 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 19:09:28.497009
+2025-12-18 19:09:28 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 23.16秒，累计更新次数: 1
+2025-12-18 19:09:28 | INFO     | app:init_app:674 - ✓ 定时任务调度器启动
+2025-12-18 19:09:28 | INFO     | app:init_app:678 - ==================================================
+2025-12-18 19:09:28 | INFO     | app:init_app:679 - 应用初始化完成!
+2025-12-18 19:09:28 | INFO     | app:init_app:680 - ==================================================
+2025-12-18 19:09:42 | INFO     | app:init_app:644 - ==================================================
+2025-12-18 19:09:42 | INFO     | app:init_app:645 - 糖尿病智能诊断助手启动中...
+2025-12-18 19:09:42 | INFO     | app:init_app:646 - ==================================================
+2025-12-18 19:09:42 | INFO     | db_service:__init__:44 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 19:09:43 | INFO     | db_service:test_connection:297 - 数据库连接测试成功
+2025-12-18 19:09:43 | INFO     | app:init_app:658 - ✓ 数据库连接成功
+2025-12-18 19:09:44 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 19:09:45 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 19:09:27.572150
+2025-12-18 19:09:45 | INFO     | app:init_app:667 - ✓ 向量存储初始化完成
+2025-12-18 19:09:45 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 19:09:45 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 19:09:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:09:45.912245
+2025-12-18 19:09:45 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 19:09:49 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 19:09:52 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 19:09:52 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 19:09:53 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 19:09:53 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 19:09:53 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 19:10:09 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 19:10:09 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 19:10:09.598075
+2025-12-18 19:10:09 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 23.69秒，累计更新次数: 1
+2025-12-18 19:10:09 | INFO     | app:init_app:674 - ✓ 定时任务调度器启动
+2025-12-18 19:10:09 | INFO     | app:init_app:678 - ==================================================
+2025-12-18 19:10:09 | INFO     | app:init_app:679 - 应用初始化完成!
+2025-12-18 19:10:09 | INFO     | app:init_app:680 - ==================================================
+2025-12-18 19:11:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:11:05.341434
+2025-12-18 19:11:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:11:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:11:45.920479
+2025-12-18 19:11:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:12:09 | INFO     | db_service:test_connection:297 - 数据库连接测试成功
+2025-12-18 19:12:16 | WARNING  | db_service:set_simulate_db_failure:22 - 数据库连接失败模拟已开启
+2025-12-18 19:12:42 | ERROR    | db_service:get_connection:51 - 【模拟】数据库连接失败 - 模拟模式已开启
+2025-12-18 19:12:42 | ERROR    | app:api_patients:303 - 获取患者列表失败 - 数据库连接异常: 数据库连接失败：无法连接到MySQL服务器 (模拟模式)
+2025-12-18 19:13:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:13:05.342733
+2025-12-18 19:13:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:13:44 | INFO     | llm_client:__init__:24 - LLM客户端初始化完成，模型: qwen-plus-latest
+2025-12-18 19:13:45 | INFO     | term_mapper:__init__:23 - 术语映射器初始化完成，共30个映射
+2025-12-18 19:13:45 | INFO     | rag_service:__init__:25 - RAG服务初始化完成
+2025-12-18 19:13:45 | INFO     | risk_engine:__init__:17 - 风险评估引擎初始化完成
+2025-12-18 19:13:45 | INFO     | safety_guard:__init__:16 - 安全预警模块初始化完成
+2025-12-18 19:13:45 | INFO     | diagnosis_agent:__init__:28 - 诊疗决策智能体初始化完成
+2025-12-18 19:13:45 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: PREGNANT_TEST_001
+2025-12-18 19:13:45 | INFO     | db_service:get_patient_full_profile:190 - 获取患者完整档案，patient_id: PREGNANT_TEST_001
+2025-12-18 19:13:45 | ERROR    | db_service:get_connection:51 - 【模拟】数据库连接失败 - 模拟模式已开启
+2025-12-18 19:13:45 | ERROR    | diagnosis_agent:build_patient_profile:68 - 构建患者画像失败: 数据库连接失败：无法连接到MySQL服务器 (模拟模式)
+2025-12-18 19:13:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:13:45.914532
+2025-12-18 19:13:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:13:51 | INFO     | diagnosis_agent:assess_risk:85 - 开始风险分层评估，患者ID: PREGNANT_TEST_001
+2025-12-18 19:13:51 | INFO     | db_service:get_patient_full_profile:190 - 获取患者完整档案，patient_id: PREGNANT_TEST_001
+2025-12-18 19:13:51 | ERROR    | db_service:get_connection:51 - 【模拟】数据库连接失败 - 模拟模式已开启
+2025-12-18 19:13:51 | ERROR    | diagnosis_agent:assess_risk:140 - 风险评估失败: 数据库连接失败：无法连接到MySQL服务器 (模拟模式)
+2025-12-18 19:13:53 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: PREGNANT_TEST_001
+2025-12-18 19:13:53 | INFO     | db_service:get_patient_full_profile:190 - 获取患者完整档案，patient_id: PREGNANT_TEST_001
+2025-12-18 19:13:53 | ERROR    | db_service:get_connection:51 - 【模拟】数据库连接失败 - 模拟模式已开启
+2025-12-18 19:13:53 | ERROR    | diagnosis_agent:build_patient_profile:68 - 构建患者画像失败: 数据库连接失败：无法连接到MySQL服务器 (模拟模式)
+2025-12-18 19:13:54 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: PREGNANT_TEST_001
+2025-12-18 19:13:54 | INFO     | db_service:get_patient_full_profile:190 - 获取患者完整档案，patient_id: PREGNANT_TEST_001
+2025-12-18 19:13:54 | ERROR    | db_service:get_connection:51 - 【模拟】数据库连接失败 - 模拟模式已开启
+2025-12-18 19:13:54 | ERROR    | diagnosis_agent:build_patient_profile:68 - 构建患者画像失败: 数据库连接失败：无法连接到MySQL服务器 (模拟模式)
+2025-12-18 19:13:55 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: PREGNANT_TEST_001
+2025-12-18 19:13:55 | INFO     | db_service:get_patient_full_profile:190 - 获取患者完整档案，patient_id: PREGNANT_TEST_001
+2025-12-18 19:13:55 | ERROR    | db_service:get_connection:51 - 【模拟】数据库连接失败 - 模拟模式已开启
+2025-12-18 19:13:55 | ERROR    | diagnosis_agent:build_patient_profile:68 - 构建患者画像失败: 数据库连接失败：无法连接到MySQL服务器 (模拟模式)
+2025-12-18 19:13:55 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: PREGNANT_TEST_001
+2025-12-18 19:13:55 | INFO     | db_service:get_patient_full_profile:190 - 获取患者完整档案，patient_id: PREGNANT_TEST_001
+2025-12-18 19:13:55 | ERROR    | db_service:get_connection:51 - 【模拟】数据库连接失败 - 模拟模式已开启
+2025-12-18 19:13:55 | ERROR    | diagnosis_agent:build_patient_profile:68 - 构建患者画像失败: 数据库连接失败：无法连接到MySQL服务器 (模拟模式)
+2025-12-18 19:15:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:15:05.340763
+2025-12-18 19:15:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:15:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:15:45.925249
+2025-12-18 19:15:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:17:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:17:05.337709
+2025-12-18 19:17:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:17:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:17:45.918497
+2025-12-18 19:17:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:19:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:19:05.344620
+2025-12-18 19:19:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:19:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:19:45.923635
+2025-12-18 19:19:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:21:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:21:05.338267
+2025-12-18 19:21:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:21:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:21:45.919891
+2025-12-18 19:21:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:23:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:23:05.336305
+2025-12-18 19:23:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:23:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:23:45.914435
+2025-12-18 19:23:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:25:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:25:05.332014
+2025-12-18 19:25:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:25:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:25:45.921493
+2025-12-18 19:25:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:27:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:27:05.344752
+2025-12-18 19:27:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:27:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:27:45.926624
+2025-12-18 19:27:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:29:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:29:05.339749
+2025-12-18 19:29:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:29:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:29:45.920174
+2025-12-18 19:29:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:31:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:31:05.333749
+2025-12-18 19:31:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:31:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:31:45.913437
+2025-12-18 19:31:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:33:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:33:05.344786
+2025-12-18 19:33:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:33:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:33:45.926127
+2025-12-18 19:33:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:35:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:35:05.342897
+2025-12-18 19:35:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:35:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:35:45.919857
+2025-12-18 19:35:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:35:54 | WARNING  | db_service:set_simulate_db_failure:22 - 数据库连接失败模拟已关闭
+2025-12-18 19:35:54 | INFO     | db_service:test_connection:297 - 数据库连接测试成功
+2025-12-18 19:36:14 | INFO     | diagnosis_agent:process_emergency:695 - 处理紧急情况，症状: 头痛呕吐3小时，视物模糊...
+2025-12-18 19:36:14 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压急症 紧急处理 静脉降压', 日期过滤: None
+2025-12-18 19:36:14 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 19:36:15 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 急症   紧急 处理 静脉 降压...', 结果数: 3
+2025-12-18 19:36:15 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 19:36:15 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 19:36:16 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 19:36:16 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 19:36:16 | INFO     | db_service:execute_query:89 - SQL查询执行成功，耗时: 493ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 19:36:17 | INFO     | db_service:execute_query:89 - SQL查询执行成功，耗时: 578ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 19:36:17 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中3条
+2025-12-18 19:36:17 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 167, 历史消息数: 0
+2025-12-18 19:36:21 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: N/A
+2025-12-18 19:36:21 | INFO     | safety_guard:check_all:71 - 安全检查完成，共2条警告，危急警告1条，是否安全: False
+2025-12-18 19:36:21 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: N/A
+2025-12-18 19:36:21 | INFO     | safety_guard:check_all:71 - 安全检查完成，共2条警告，危急警告1条，是否安全: False
+2025-12-18 19:36:59 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 2800
+2025-12-18 19:36:59 | INFO     | diagnosis_agent:process_emergency:758 - 紧急情况处理完成，是否急症: True
+2025-12-18 19:37:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:37:05.331717
+2025-12-18 19:37:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 19:37:45 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T19:37:45.920521
+2025-12-18 19:37:45 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新

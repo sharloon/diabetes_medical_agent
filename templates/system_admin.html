@@ -6,21 +6,40 @@
 <div class="row">
     <div class="col-12">
         <h2 class="page-title"><i class="bi bi-gear me-2"></i>系统运维</h2>
-        <p class="page-subtitle">索引管理、系统状态监控、日志查看</p>
+        <p class="page-subtitle">索引管理、系统状态监控、日志查看、异常模拟</p>
+    </div>
+</div>
+
+<!-- 降级模式警告提示 -->
+<div class="row mb-4" id="degradedModeAlert" style="display: none;">
+    <div class="col-12">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <h5 class="alert-heading"><i class="bi bi-exclamation-triangle-fill me-2"></i>系统降级模式</h5>
+            <hr>
+            <p class="mb-0" id="degradedModeMessage">数据库连接失败，系统已自动进入降级模式。部分功能暂时不可用。</p>
+            <ul class="mt-2 mb-0" id="degradedFeatureList">
+                <li>✅ PDF知识库检索</li>
+                <li>✅ Excel数据分析</li>
+                <li>✅ 术语映射查询</li>
+                <li>❌ 患者信息查询</li>
+                <li>❌ 临床数据分析</li>
+                <li>❌ 个性化诊疗决策</li>
+            </ul>
+        </div>
     </div>
 </div>
 
 <div class="row mb-4">
-    <div class="col-md-4">
-        <div class="card text-center">
+    <div class="col-md-3">
+        <div class="card text-center" id="dbStatusCard">
             <div class="card-body">
-                <i class="bi bi-database text-primary" style="font-size: 2rem;"></i>
+                <i class="bi bi-database text-primary" style="font-size: 2rem;" id="dbIcon"></i>
                 <h5 class="mt-2" id="dbStatus">检查中...</h5>
                 <p class="text-muted mb-0">数据库状态</p>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="card text-center">
             <div class="card-body">
                 <i class="bi bi-archive text-success" style="font-size: 2rem;"></i>
@@ -29,12 +48,55 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="card text-center">
             <div class="card-body">
                 <i class="bi bi-clock text-info" style="font-size: 2rem;"></i>
                 <h5 class="mt-2" id="schedulerStatus">检查中...</h5>
                 <p class="text-muted mb-0">定时任务状态</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center" id="simulateCard">
+            <div class="card-body">
+                <i class="bi bi-bug text-secondary" style="font-size: 2rem;" id="simulateIcon"></i>
+                <h5 class="mt-2" id="simulateStatus">正常模式</h5>
+                <p class="text-muted mb-0">异常模拟</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 异常模拟控制面板 -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card border-warning">
+            <div class="card-header bg-warning text-dark">
+                <i class="bi bi-bug-fill me-2"></i>异常模拟测试（用于演示系统优雅降级功能）
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h6><i class="bi bi-database-x me-2"></i>模拟数据库连接失败</h6>
+                        <p class="text-muted small mb-0">开启后，所有数据库操作将返回连接失败错误，系统将展示优雅降级处理。</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <div class="form-check form-switch d-inline-block me-3">
+                            <input class="form-check-input" type="checkbox" id="dbFailureSwitch" style="width: 3rem; height: 1.5rem;">
+                            <label class="form-check-label" for="dbFailureSwitch" id="dbFailureLabel">已关闭</label>
+                        </div>
+                        <button class="btn btn-outline-primary btn-sm" onclick="testDbConnection()">
+                            <i class="bi bi-play-circle me-1"></i>测试降级效果
+                        </button>
+                    </div>
+                </div>
+                <hr>
+                <div id="simulationResult" style="display: none;">
+                    <div class="alert mb-0" id="simulationAlert">
+                        <pre class="mb-0 small" id="simulationMessage" style="white-space: pre-wrap;"></pre>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -98,6 +160,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     refreshStatus();
     loadLogs();
+    loadSimulateStatus();
+    
+    // 绑定模拟开关事件
+    document.getElementById('dbFailureSwitch').addEventListener('change', function() {
+        toggleDbFailureSimulation(this.checked);
+    });
 });
 
 function refreshStatus() {
@@ -108,9 +176,25 @@ function refreshStatus() {
             const status = data.data;
             
             // 数据库状态
-            document.getElementById('dbStatus').innerHTML = status.database?.connected 
-                ? '<span class="text-success">已连接</span>' 
-                : '<span class="text-danger">未连接</span>';
+            const dbConnected = status.database?.connected;
+            const dbSimulating = status.database?.simulate_failure;
+            
+            if (dbSimulating) {
+                document.getElementById('dbStatus').innerHTML = '<span class="text-danger">模拟断开</span>';
+                document.getElementById('dbIcon').className = 'bi bi-database-x text-danger';
+                document.getElementById('dbStatusCard').classList.add('border-danger');
+                showDegradedMode(true, status.database?.error);
+            } else if (dbConnected) {
+                document.getElementById('dbStatus').innerHTML = '<span class="text-success">已连接</span>';
+                document.getElementById('dbIcon').className = 'bi bi-database-check text-success';
+                document.getElementById('dbStatusCard').classList.remove('border-danger');
+                showDegradedMode(false);
+            } else {
+                document.getElementById('dbStatus').innerHTML = '<span class="text-danger">未连接</span>';
+                document.getElementById('dbIcon').className = 'bi bi-database-x text-danger';
+                document.getElementById('dbStatusCard').classList.add('border-danger');
+                showDegradedMode(true, status.database?.error || '数据库连接失败');
+            }
             
             // 索引状态
             if (status.vector_store) {
@@ -150,6 +234,106 @@ function refreshStatus() {
         document.getElementById('dbStatus').innerHTML = '<span class="text-danger">检查失败</span>';
         document.getElementById('indexStatus').innerHTML = '<span class="text-danger">检查失败</span>';
         document.getElementById('schedulerStatus').innerHTML = '<span class="text-danger">检查失败</span>';
+    });
+}
+
+function loadSimulateStatus() {
+    fetch('/api/system/db-failure-status')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            const simulating = data.data.simulate_failure;
+            document.getElementById('dbFailureSwitch').checked = simulating;
+            updateSimulateUI(simulating);
+        }
+    });
+}
+
+function toggleDbFailureSimulation(enabled) {
+    fetch('/api/system/simulate-db-failure', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({enabled: enabled})
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            updateSimulateUI(enabled);
+            refreshStatus();
+            
+            // 显示提示
+            const resultDiv = document.getElementById('simulationResult');
+            const alertDiv = document.getElementById('simulationAlert');
+            const msgDiv = document.getElementById('simulationMessage');
+            
+            resultDiv.style.display = 'block';
+            if (enabled) {
+                alertDiv.className = 'alert alert-danger mb-0';
+                msgDiv.textContent = '✅ 数据库连接失败模拟已开启\n\n系统已进入降级模式，请访问其他页面查看优雅降级效果：\n• 临床数据查询页面\n• 安全控制页面\n• 诊疗决策页面';
+            } else {
+                alertDiv.className = 'alert alert-success mb-0';
+                msgDiv.textContent = '✅ 数据库连接失败模拟已关闭\n\n系统已恢复正常模式。';
+            }
+        }
+    });
+}
+
+function updateSimulateUI(simulating) {
+    document.getElementById('dbFailureLabel').textContent = simulating ? '已开启' : '已关闭';
+    document.getElementById('simulateStatus').innerHTML = simulating 
+        ? '<span class="text-danger">模拟中</span>' 
+        : '<span class="text-success">正常模式</span>';
+    document.getElementById('simulateIcon').className = simulating 
+        ? 'bi bi-bug-fill text-danger' 
+        : 'bi bi-bug text-secondary';
+    document.getElementById('simulateCard').className = simulating 
+        ? 'card text-center border-danger' 
+        : 'card text-center';
+}
+
+function showDegradedMode(show, errorMsg) {
+    const alertDiv = document.getElementById('degradedModeAlert');
+    if (show) {
+        alertDiv.style.display = 'block';
+        if (errorMsg) {
+            document.getElementById('degradedModeMessage').textContent = errorMsg;
+        }
+    } else {
+        alertDiv.style.display = 'none';
+    }
+}
+
+function testDbConnection() {
+    const resultDiv = document.getElementById('simulationResult');
+    const alertDiv = document.getElementById('simulationAlert');
+    const msgDiv = document.getElementById('simulationMessage');
+    
+    resultDiv.style.display = 'block';
+    alertDiv.className = 'alert alert-info mb-0';
+    msgDiv.textContent = '⏳ 正在测试数据库连接和降级效果...';
+    
+    // 测试获取患者列表接口
+    fetch('/api/patients')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alertDiv.className = 'alert alert-success mb-0';
+            msgDiv.textContent = `✅ 数据库连接正常\n\n成功获取 ${data.data?.length || 0} 条患者记录。`;
+        } else {
+            // 显示降级信息
+            alertDiv.className = 'alert alert-warning mb-0';
+            let message = `⚠️ 数据库连接失败 - 系统优雅降级\n\n`;
+            message += `错误类型: ${data.error_type || 'unknown'}\n`;
+            message += `错误信息: ${data.error}\n\n`;
+            if (data.fallback_message) {
+                message += `降级提示:\n${data.fallback_message}`;
+            }
+            msgDiv.textContent = message;
+        }
+    })
+    .catch(error => {
+        alertDiv.className = 'alert alert-danger mb-0';
+        msgDiv.textContent = `❌ 请求失败: ${error.message}`;
     });
 }
 
