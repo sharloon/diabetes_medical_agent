@@ -145,8 +145,17 @@ def api_excel_stats():
         # 准备可视化数据
         vis_data = {}
         for filename, file_stats in stats.items():
+            # 转换insulin_stats中的numpy类型为Python原生类型
+            raw_insulin = file_stats.get('insulin_stats', {})
+            insulin_stats = {
+                'total_patients': int(raw_insulin.get('total_patients', 0)),
+                'insulin_users': int(raw_insulin.get('insulin_users', 0)),
+                'insulin_non_users': int(raw_insulin.get('insulin_non_users', 0)),
+                'usage_rate': float(raw_insulin.get('usage_rate', 0.0))
+            }
+            
             vis_data[filename] = {
-                'insulin_stats': file_stats.get('insulin_stats', {}),
+                'insulin_stats': insulin_stats,
                 'gender_distribution': {str(k): int(v) for k, v in file_stats.get('gender_distribution', {}).items()},
                 'age_distribution': {str(k): int(v) for k, v in file_stats.get('age_distribution', {}).items()},
                 'bmi_distribution': {str(k): int(v) for k, v in file_stats.get('bmi_distribution', {}).items()}

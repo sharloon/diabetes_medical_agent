@@ -1174,3 +1174,1822 @@ embeddings.24
 2025-12-18 16:19:11 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
 2025-12-18 16:19:12 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
 2025-12-18 16:19:12 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:21:49 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:21:49 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:21:49 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:21:49 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:21:49 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:21:49 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:21:50 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:21:53 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 16:19:02.957867
+2025-12-18 16:21:53 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:21:53 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:21:53 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:21:53 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:21:53.189549
+2025-12-18 16:21:53 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:21:56 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:22:00 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:22:00 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:22:00 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:22:01 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:22:01 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:22:18 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:22:18 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 16:22:18.456740
+2025-12-18 16:22:18 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 25.27秒，累计更新次数: 1
+2025-12-18 16:22:18 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:22:18 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:22:18 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:22:18 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:22:32 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:22:32 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:22:32 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:22:32 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:22:32 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:22:32 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:22:33 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:22:35 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 16:22:17.623262
+2025-12-18 16:22:35 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:22:35 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:22:35 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:22:35 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:22:35.176881
+2025-12-18 16:22:35 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:22:38 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:22:42 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:22:42 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:22:42 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:22:43 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:22:43 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:23:00 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:23:00 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 16:23:00.456130
+2025-12-18 16:23:00 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 25.28秒，累计更新次数: 1
+2025-12-18 16:23:00 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:23:00 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:23:00 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:23:00 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:23:53 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:23:53.192980
+2025-12-18 16:23:53 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:24:35 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:24:35.190216
+2025-12-18 16:24:35 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:24:49 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:24:49 | INFO     | data_ingest:extract_toc:121 - 目录提取完成: 中国高血压防治指南.pdf, 共0个条目
+2025-12-18 16:24:49 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:24:50 | INFO     | data_ingest:extract_toc:121 - 目录提取完成: 高血压诊疗指南.pdf, 共0个条目
+2025-12-18 16:24:56 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:24:57 | INFO     | data_ingest:extract_toc:121 - 目录提取完成: 中国高血压防治指南.pdf, 共0个条目
+2025-12-18 16:25:00 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:25:00 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:25:01 | INFO     | data_ingest:extract_toc:121 - 目录提取完成: 中国高血压防治指南.pdf, 共0个条目
+2025-12-18 16:25:04 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:25:53 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:25:53.197093
+2025-12-18 16:25:53 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:26:18 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:26:18 | INFO     | data_ingest:extract_toc:121 - 目录提取完成: 中国高血压防治指南.pdf, 共0个条目
+2025-12-18 16:26:18 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:26:19 | INFO     | data_ingest:extract_toc:121 - 目录提取完成: 高血压诊疗指南.pdf, 共0个条目
+2025-12-18 16:26:35 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:26:35.191608
+2025-12-18 16:26:35 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:27:38 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:27:39 | INFO     | data_ingest:extract_toc:121 - 目录提取完成: 中国高血压防治指南.pdf, 共0个条目
+2025-12-18 16:27:42 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:27:42 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:27:43 | INFO     | data_ingest:extract_toc:121 - 目录提取完成: 中国高血压防治指南.pdf, 共0个条目
+2025-12-18 16:27:46 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:27:53 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:27:53.198017
+2025-12-18 16:27:53 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:28:14 | INFO     | term_mapper:__init__:23 - 术语映射器初始化完成，共30个映射
+2025-12-18 16:28:19 | INFO     | term_mapper:normalize:47 - 术语标准化: '心梗' -> '心肌梗死'
+2025-12-18 16:28:20 | INFO     | term_mapper:normalize:47 - 术语标准化: '心梗' -> '心肌梗死'
+2025-12-18 16:28:35 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:28:35.188280
+2025-12-18 16:28:35 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:29:30 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:29:30 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:29:30 | INFO     | data_ingest:get_insulin_usage_stats:218 - 胰岛素使用率统计完成: 使用率=100.0%
+2025-12-18 16:29:30 | INFO     | data_ingest:load_excel_data:412 - 共加载1个Excel文件，总计125条数据
+2025-12-18 16:29:30 | ERROR    | app:api_excel_stats:157 - 获取Excel统计失败: Object of type int64 is not JSON serializable
+2025-12-18 16:29:53 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:29:53.193623
+2025-12-18 16:29:53 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:30:35 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:30:35.187905
+2025-12-18 16:30:35 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:31:34 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:31:34 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:31:34 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:31:34 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:31:35 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:31:35 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:31:35 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:31:37 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 16:22:59.619099
+2025-12-18 16:31:37 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:31:37 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:31:37 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:31:37 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:31:37.760841
+2025-12-18 16:31:37 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:31:41 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:31:44 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:31:44 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:31:44 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:31:45 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:31:45 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:32:01 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:32:01 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 16:32:01.118942
+2025-12-18 16:32:01 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 23.36秒，累计更新次数: 1
+2025-12-18 16:32:01 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:32:01 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:32:01 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:32:01 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:32:14 | INFO     | app:init_app:539 - ==================================================
+2025-12-18 16:32:14 | INFO     | app:init_app:540 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:32:14 | INFO     | app:init_app:541 - ==================================================
+2025-12-18 16:32:14 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:32:14 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:32:14 | INFO     | app:init_app:553 - ✓ 数据库连接成功
+2025-12-18 16:32:15 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:32:17 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 16:32:00.295752
+2025-12-18 16:32:17 | INFO     | app:init_app:562 - ✓ 向量存储初始化完成
+2025-12-18 16:32:17 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:32:17 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:32:17 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:32:17.185529
+2025-12-18 16:32:17 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:32:20 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:32:23 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:32:23 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:32:24 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:32:24 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:32:24 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:32:40 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:32:40 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 16:32:40.140000
+2025-12-18 16:32:40 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 22.96秒，累计更新次数: 1
+2025-12-18 16:32:40 | INFO     | app:init_app:569 - ✓ 定时任务调度器启动
+2025-12-18 16:32:40 | INFO     | app:init_app:573 - ==================================================
+2025-12-18 16:32:40 | INFO     | app:init_app:574 - 应用初始化完成!
+2025-12-18 16:32:40 | INFO     | app:init_app:575 - ==================================================
+2025-12-18 16:32:54 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:32:54 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:32:54 | INFO     | data_ingest:get_insulin_usage_stats:218 - 胰岛素使用率统计完成: 使用率=100.0%
+2025-12-18 16:32:54 | INFO     | data_ingest:load_excel_data:412 - 共加载1个Excel文件，总计125条数据
+2025-12-18 16:32:54 | ERROR    | app:api_excel_stats:157 - 获取Excel统计失败: Object of type int64 is not JSON serializable
+2025-12-18 16:32:55 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:32:55 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:32:55 | INFO     | data_ingest:get_insulin_usage_stats:218 - 胰岛素使用率统计完成: 使用率=100.0%
+2025-12-18 16:32:55 | INFO     | data_ingest:load_excel_data:412 - 共加载1个Excel文件，总计125条数据
+2025-12-18 16:32:55 | ERROR    | app:api_excel_stats:157 - 获取Excel统计失败: Object of type int64 is not JSON serializable
+2025-12-18 16:32:55 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:32:55 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:32:55 | INFO     | data_ingest:get_insulin_usage_stats:218 - 胰岛素使用率统计完成: 使用率=100.0%
+2025-12-18 16:32:55 | INFO     | data_ingest:load_excel_data:412 - 共加载1个Excel文件，总计125条数据
+2025-12-18 16:32:55 | ERROR    | app:api_excel_stats:157 - 获取Excel统计失败: Object of type int64 is not JSON serializable
+2025-12-18 16:32:58 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:32:58 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:32:58 | INFO     | data_ingest:get_insulin_usage_stats:218 - 胰岛素使用率统计完成: 使用率=100.0%
+2025-12-18 16:32:58 | INFO     | data_ingest:load_excel_data:412 - 共加载1个Excel文件，总计125条数据
+2025-12-18 16:32:58 | ERROR    | app:api_excel_stats:157 - 获取Excel统计失败: Object of type int64 is not JSON serializable
+2025-12-18 16:35:22 | INFO     | app:init_app:548 - ==================================================
+2025-12-18 16:35:22 | INFO     | app:init_app:549 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:35:22 | INFO     | app:init_app:550 - ==================================================
+2025-12-18 16:35:22 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:35:22 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:35:22 | INFO     | app:init_app:562 - ✓ 数据库连接成功
+2025-12-18 16:35:23 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:35:25 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 16:32:39.316570
+2025-12-18 16:35:25 | INFO     | app:init_app:571 - ✓ 向量存储初始化完成
+2025-12-18 16:35:25 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:35:25 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:35:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:35:25.199538
+2025-12-18 16:35:25 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:35:28 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:35:31 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:35:31 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:35:32 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:35:32 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:35:32 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:35:48 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:35:48 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 16:35:48.591061
+2025-12-18 16:35:48 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 23.39秒，累计更新次数: 1
+2025-12-18 16:35:48 | INFO     | app:init_app:578 - ✓ 定时任务调度器启动
+2025-12-18 16:35:48 | INFO     | app:init_app:582 - ==================================================
+2025-12-18 16:35:48 | INFO     | app:init_app:583 - 应用初始化完成!
+2025-12-18 16:35:48 | INFO     | app:init_app:584 - ==================================================
+2025-12-18 16:36:02 | INFO     | app:init_app:548 - ==================================================
+2025-12-18 16:36:02 | INFO     | app:init_app:549 - 糖尿病智能诊断助手启动中...
+2025-12-18 16:36:02 | INFO     | app:init_app:550 - ==================================================
+2025-12-18 16:36:02 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 16:36:02 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:36:02 | INFO     | app:init_app:562 - ✓ 数据库连接成功
+2025-12-18 16:36:03 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:36:05 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 16:35:47.768866
+2025-12-18 16:36:05 | INFO     | app:init_app:571 - ✓ 向量存储初始化完成
+2025-12-18 16:36:05 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 16:36:05 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 16:36:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:36:05.191714
+2025-12-18 16:36:05 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 16:36:08 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 16:36:12 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 16:36:12 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 16:36:12 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 16:36:13 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 16:36:13 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 16:36:28 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 16:36:28 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 16:36:28.221971
+2025-12-18 16:36:28 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 23.03秒，累计更新次数: 1
+2025-12-18 16:36:28 | INFO     | app:init_app:578 - ✓ 定时任务调度器启动
+2025-12-18 16:36:28 | INFO     | app:init_app:582 - ==================================================
+2025-12-18 16:36:28 | INFO     | app:init_app:583 - 应用初始化完成!
+2025-12-18 16:36:28 | INFO     | app:init_app:584 - ==================================================
+2025-12-18 16:37:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:37:25.200462
+2025-12-18 16:37:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:37:49 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:37:49 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:37:49 | INFO     | data_ingest:get_insulin_usage_stats:218 - 胰岛素使用率统计完成: 使用率=100.0%
+2025-12-18 16:37:49 | INFO     | data_ingest:load_excel_data:412 - 共加载1个Excel文件，总计125条数据
+2025-12-18 16:38:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:38:05.192366
+2025-12-18 16:38:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:39:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:39:25.208733
+2025-12-18 16:39:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:40:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:40:05.193227
+2025-12-18 16:40:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:41:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:41:25.211181
+2025-12-18 16:41:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:42:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:42:05.196291
+2025-12-18 16:42:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:43:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:43:25.211647
+2025-12-18 16:43:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:44:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:44:05.195250
+2025-12-18 16:44:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:45:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:45:25.211983
+2025-12-18 16:45:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:46:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:46:05.191780
+2025-12-18 16:46:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:47:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:47:25.213015
+2025-12-18 16:47:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:48:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:48:05.191185
+2025-12-18 16:48:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:49:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:49:25.206119
+2025-12-18 16:49:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:50:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:50:05.193870
+2025-12-18 16:50:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:51:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:51:25.207431
+2025-12-18 16:51:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:51:48 | INFO     | term_mapper:__init__:23 - 术语映射器初始化完成，共30个映射
+2025-12-18 16:51:49 | INFO     | llm_client:__init__:24 - LLM客户端初始化完成，模型: qwen-plus-latest
+2025-12-18 16:51:49 | INFO     | rag_service:__init__:25 - RAG服务初始化完成
+2025-12-18 16:51:49 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压急症处理', 日期过滤: None
+2025-12-18 16:51:49 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 16:51:50 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 急症 处理...', 结果数: 5
+2025-12-18 16:51:50 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中5条
+2025-12-18 16:51:50 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:51:50 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:51:50 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 16:51:50 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 452ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 16:51:51 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 494ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 16:51:51 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中5条
+2025-12-18 16:52:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:52:05.194823
+2025-12-18 16:52:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:52:37 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 378ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 16:52:37 | INFO     | rag_service:validate_guideline_timeliness:321 - 指南时效性验证完成，2025-07-20之后更新的指南数: 2
+2025-12-18 16:53:14 | INFO     | rag_service:chat:283 - 开始对话，问题: '骨折怎么治疗', 患者ID: None
+2025-12-18 16:53:14 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '骨折怎么治疗', 日期过滤: None
+2025-12-18 16:53:15 | INFO     | vector_store:search:210 - 检索完成，查询: '骨折 怎么 治疗...', 结果数: 5
+2025-12-18 16:53:15 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中5条
+2025-12-18 16:53:15 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:53:15 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:53:15 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 16:53:16 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 404ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 16:53:16 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中0条
+2025-12-18 16:53:16 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 699, 历史消息数: 0
+2025-12-18 16:53:24 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 463
+2025-12-18 16:53:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:53:25.210289
+2025-12-18 16:53:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:54:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:54:05.190366
+2025-12-18 16:54:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:54:14 | INFO     | rag_service:chat:283 - 开始对话，问题: '什么是高血压？', 患者ID: None
+2025-12-18 16:54:14 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '什么是高血压？', 日期过滤: None
+2025-12-18 16:54:14 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 16:54:15 | INFO     | vector_store:search:210 - 检索完成，查询: '什么 是 高血压病 高血压 ？...', 结果数: 5
+2025-12-18 16:54:15 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中5条
+2025-12-18 16:54:15 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:54:15 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:54:15 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 16:54:16 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 713ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 16:54:16 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 479ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 16:54:16 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中5条
+2025-12-18 16:54:16 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 2986, 历史消息数: 0
+2025-12-18 16:54:28 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 638
+2025-12-18 16:55:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:55:25.209603
+2025-12-18 16:55:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:56:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:56:05.204891
+2025-12-18 16:56:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:56:10 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 16:56:58 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 451ms, SQL: 
+        SELECT DISTINCT p.patient_id, p.name, p.gender, p.age, p.bmi,
+               h.sbp, h.dbp, h.risk_level as hypertension_risk,
+               d.hba1c, d.control_status as diabetes_status
+     ...
+2025-12-18 16:57:04 | INFO     | risk_engine:__init__:17 - 风险评估引擎初始化完成
+2025-12-18 16:57:04 | INFO     | safety_guard:__init__:16 - 安全预警模块初始化完成
+2025-12-18 16:57:04 | INFO     | diagnosis_agent:__init__:28 - 诊疗决策智能体初始化完成
+2025-12-18 16:57:04 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1001_0_20210730
+2025-12-18 16:57:04 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1001_0_20210730
+2025-12-18 16:57:05 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 432ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 16:57:05 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 450ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 16:57:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 397ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 16:57:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 435ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 16:57:07 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 418ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 16:57:07 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 407ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 16:57:07 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 2 条诊断, 2 条用药记录
+2025-12-18 16:57:07 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1001_0_20210730
+2025-12-18 16:57:07 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 16:57:07 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1001_0_20210730
+2025-12-18 16:57:07 | INFO     | safety_guard:check_all:71 - 安全检查完成，共0条警告，危急警告0条，是否安全: True
+2025-12-18 16:57:07 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 16:57:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:57:25.205082
+2025-12-18 16:57:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:58:04 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 415ms, SQL: 
+        SELECT DISTINCT p.patient_id, p.name, p.gender, p.age, p.bmi,
+               h.sbp, h.dbp, h.risk_level as hypertension_risk,
+               d.hba1c, d.control_status as diabetes_status
+     ...
+2025-12-18 16:58:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:58:05.205854
+2025-12-18 16:58:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:58:12 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1001_0_20210730
+2025-12-18 16:58:12 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1001_0_20210730
+2025-12-18 16:58:12 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 411ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 16:58:12 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 479ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 16:58:13 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 416ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 16:58:13 | INFO     | diagnosis_agent:assess_risk:85 - 开始风险分层评估，患者ID: 1001_0_20210730
+2025-12-18 16:58:13 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1001_0_20210730
+2025-12-18 16:58:13 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 385ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 16:58:13 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 422ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 16:58:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 396ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 16:58:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 394ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 16:58:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 399ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 16:58:14 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 2 条诊断, 2 条用药记录
+2025-12-18 16:58:14 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1001_0_20210730
+2025-12-18 16:58:14 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 16:58:14 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1001_0_20210730
+2025-12-18 16:58:14 | INFO     | safety_guard:check_all:71 - 安全检查完成，共0条警告，危急警告0条，是否安全: True
+2025-12-18 16:58:14 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 16:58:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 404ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 16:58:15 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 391ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 16:58:15 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 413ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 16:58:15 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 389ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 16:58:15 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 2 条诊断, 2 条用药记录
+2025-12-18 16:58:15 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1001_0_20210730
+2025-12-18 16:58:15 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 16:58:15 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压风险评估 很高危', 日期过滤: None
+2025-12-18 16:58:15 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 16:58:16 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 风险 评估   很 高危...', 结果数: 3
+2025-12-18 16:58:16 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 16:58:16 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:58:16 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:58:16 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 16:58:16 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 373ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 16:58:17 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 561ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 16:58:17 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中3条
+2025-12-18 16:58:17 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 493, 历史消息数: 0
+2025-12-18 16:58:43 | INFO     | diagnosis_agent:check_drug_conflicts:156 - 开始用药冲突检测，患者ID: 1001_0_20210730
+2025-12-18 16:58:43 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1001_0_20210730
+2025-12-18 16:58:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 451ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 16:58:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 403ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 16:58:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 389ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 16:58:45 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 487ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 16:58:45 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 396ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 16:58:46 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 488ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 16:58:46 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 2 条诊断, 2 条用药记录
+2025-12-18 16:58:46 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1001_0_20210730
+2025-12-18 16:58:46 | INFO     | safety_guard:check_all:71 - 安全检查完成，共0条警告，危急警告0条，是否安全: True
+2025-12-18 16:58:46 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '药物相互作用 禁忌 布洛芬胶囊 氨氯地平片', 日期过滤: None
+2025-12-18 16:58:46 | INFO     | vector_store:search:210 - 检索完成，查询: '药物 相互作用   禁忌 布洛芬 胶囊 氨氯地平 络活喜 片...', 结果数: 3
+2025-12-18 16:58:46 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 16:58:46 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 16:58:46 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 16:58:46 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 16:58:47 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 423ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 16:58:47 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中0条
+2025-12-18 16:58:47 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 183, 历史消息数: 0
+2025-12-18 16:59:20 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 3936
+2025-12-18 16:59:20 | INFO     | diagnosis_agent:assess_risk:136 - 风险评估完成，结果: 很高危
+2025-12-18 16:59:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T16:59:25.201865
+2025-12-18 16:59:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 16:59:51 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 3506
+2025-12-18 16:59:51 | INFO     | diagnosis_agent:check_drug_conflicts:216 - 用药冲突检测完成，发现0条禁忌，0条相互作用
+2025-12-18 17:00:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:00:05.197455
+2025-12-18 17:00:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:00:41 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1002_0_20210504
+2025-12-18 17:00:41 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_0_20210504
+2025-12-18 17:00:41 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 399ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:00:42 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 364ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:00:42 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 434ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:00:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 482ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:00:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 398ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:00:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 399ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:00:43 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:00:43 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1002_0_20210504
+2025-12-18 17:00:43 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:00:43 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_0_20210504
+2025-12-18 17:00:43 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:00:43 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 17:00:54 | INFO     | diagnosis_agent:assess_risk:85 - 开始风险分层评估，患者ID: 1002_0_20210504
+2025-12-18 17:00:54 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_0_20210504
+2025-12-18 17:00:54 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 479ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:00:55 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 475ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:00:55 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 477ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:00:56 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 460ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:00:56 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 402ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:00:56 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 427ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:00:56 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:00:56 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1002_0_20210504
+2025-12-18 17:00:56 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:00:56 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压风险评估 很高危', 日期过滤: None
+2025-12-18 17:00:56 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 17:00:57 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 风险 评估   很 高危...', 结果数: 3
+2025-12-18 17:00:57 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:00:57 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:00:57 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:00:57 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:00:58 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 511ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:00:58 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 558ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:00:58 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中3条
+2025-12-18 17:00:58 | ERROR    | diagnosis_agent:assess_risk:140 - 风险评估失败: 'NoneType' object has no attribute 'get'
+2025-12-18 17:01:02 | INFO     | diagnosis_agent:check_drug_conflicts:156 - 开始用药冲突检测，患者ID: 1002_0_20210504
+2025-12-18 17:01:02 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_0_20210504
+2025-12-18 17:01:02 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 441ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:01:03 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 466ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:01:03 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 411ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:01:04 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 395ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:01:04 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 378ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:01:05 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 427ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:01:05 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:01:05 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_0_20210504
+2025-12-18 17:01:05 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:01:05 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '药物相互作用 禁忌 布洛芬胶囊 布洛芬胶囊 胰岛素注射液', 日期过滤: None
+2025-12-18 17:01:05 | INFO     | vector_store:search:210 - 检索完成，查询: '药物 相互作用   禁忌 布洛芬 胶囊 胰岛素 注射液...', 结果数: 3
+2025-12-18 17:01:05 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:01:05 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:01:05 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:01:05 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:01:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 406ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:01:06 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中0条
+2025-12-18 17:01:06 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 207, 历史消息数: 0
+2025-12-18 17:01:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:01:25.202389
+2025-12-18 17:01:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:01:56 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 2827
+2025-12-18 17:01:56 | INFO     | diagnosis_agent:check_drug_conflicts:216 - 用药冲突检测完成，发现0条禁忌，1条相互作用
+2025-12-18 17:02:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:02:05.195546
+2025-12-18 17:02:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:02:36 | INFO     | diagnosis_agent:assess_risk:85 - 开始风险分层评估，患者ID: 1002_0_20210504
+2025-12-18 17:02:36 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_0_20210504
+2025-12-18 17:02:37 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 422ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:02:37 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 426ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:02:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 483ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:02:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 478ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:02:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 480ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:02:39 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 477ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:02:39 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:02:39 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1002_0_20210504
+2025-12-18 17:02:39 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:02:39 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压风险评估 很高危', 日期过滤: None
+2025-12-18 17:02:39 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 17:02:40 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 风险 评估   很 高危...', 结果数: 3
+2025-12-18 17:02:40 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:02:40 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:02:40 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:02:40 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:02:40 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 409ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:02:40 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 448ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:02:40 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中3条
+2025-12-18 17:02:40 | ERROR    | diagnosis_agent:assess_risk:140 - 风险评估失败: 'NoneType' object has no attribute 'get'
+2025-12-18 17:02:45 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1002_0_20210504
+2025-12-18 17:02:45 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_0_20210504
+2025-12-18 17:02:46 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 432ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:02:46 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 455ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:02:46 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 398ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:02:47 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 393ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:02:47 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 411ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:02:48 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 471ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:02:48 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:02:48 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1002_0_20210504
+2025-12-18 17:02:48 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:02:48 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_0_20210504
+2025-12-18 17:02:48 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:02:48 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 17:02:54 | INFO     | diagnosis_agent:check_drug_conflicts:156 - 开始用药冲突检测，患者ID: 1002_0_20210504
+2025-12-18 17:02:54 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_0_20210504
+2025-12-18 17:02:54 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 455ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:02:55 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 489ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:02:55 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 467ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:02:56 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 479ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:02:56 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 395ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:02:56 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 349ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:02:56 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:02:56 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_0_20210504
+2025-12-18 17:02:56 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:02:56 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '药物相互作用 禁忌 布洛芬胶囊 布洛芬胶囊 胰岛素注射液', 日期过滤: None
+2025-12-18 17:02:57 | INFO     | vector_store:search:210 - 检索完成，查询: '药物 相互作用   禁忌 布洛芬 胶囊 胰岛素 注射液...', 结果数: 3
+2025-12-18 17:02:57 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:02:57 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:02:58 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:02:58 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:02:58 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 463ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:02:58 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中0条
+2025-12-18 17:02:58 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 207, 历史消息数: 0
+2025-12-18 17:03:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:03:25.203699
+2025-12-18 17:03:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:04:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:04:05.192696
+2025-12-18 17:04:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:05:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:05:25.211235
+2025-12-18 17:05:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:06:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:06:05.193075
+2025-12-18 17:06:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:06:05 | ERROR    | llm_client:generate:68 - LLM调用失败: Connection error.
+2025-12-18 17:06:05 | INFO     | diagnosis_agent:check_drug_conflicts:216 - 用药冲突检测完成，发现0条禁忌，1条相互作用
+2025-12-18 17:07:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:07:25.209000
+2025-12-18 17:07:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:08:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:08:05.200507
+2025-12-18 17:08:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:09:01 | ERROR    | db_service:get_connection:38 - 数据库连接失败: (2013, 'Lost connection to MySQL server during query')
+2025-12-18 17:09:01 | ERROR    | db_service:execute_query:58 - SQL查询失败: (2013, 'Lost connection to MySQL server during query'), SQL: 
+        SELECT DISTINCT p.patient_id, p.name, p.gender, p.age, p.bmi,
+               h.sbp, h.dbp, h.risk_level as hypertension_risk,
+               d.hba1c, d.control_status as diabetes_status
+        FROM patient_info p
+        LEFT JOIN hypertension_risk_assessment h ON p.patient_id = h.patient_id
+        LEFT JOIN diabetes_control_assessment d ON p.patient_id = d.patient_id
+        WHERE 1=1
+         LIMIT 100
+2025-12-18 17:09:01 | ERROR    | app:api_patients:282 - 获取患者列表失败: (2013, 'Lost connection to MySQL server during query')
+2025-12-18 17:09:06 | ERROR    | db_service:get_connection:38 - 数据库连接失败: (2013, 'Lost connection to MySQL server during query')
+2025-12-18 17:09:06 | ERROR    | db_service:execute_query:58 - SQL查询失败: (2013, 'Lost connection to MySQL server during query'), SQL: 
+        SELECT DISTINCT p.patient_id, p.name, p.gender, p.age, p.bmi,
+               h.sbp, h.dbp, h.risk_level as hypertension_risk,
+               d.hba1c, d.control_status as diabetes_status
+        FROM patient_info p
+        LEFT JOIN hypertension_risk_assessment h ON p.patient_id = h.patient_id
+        LEFT JOIN diabetes_control_assessment d ON p.patient_id = d.patient_id
+        WHERE 1=1
+         LIMIT 100
+2025-12-18 17:09:06 | ERROR    | app:api_patients:282 - 获取患者列表失败: (2013, 'Lost connection to MySQL server during query')
+2025-12-18 17:09:21 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 308ms, SQL: 
+        SELECT DISTINCT p.patient_id, p.name, p.gender, p.age, p.bmi,
+               h.sbp, h.dbp, h.risk_level as hypertension_risk,
+               d.hba1c, d.control_status as diabetes_status
+     ...
+2025-12-18 17:09:23 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1002_0_20210504
+2025-12-18 17:09:23 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_0_20210504
+2025-12-18 17:09:23 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 273ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:09:23 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 305ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:09:23 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 290ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:09:24 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 323ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:09:24 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 316ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:09:24 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 309ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:09:24 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:09:24 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1002_0_20210504
+2025-12-18 17:09:24 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:09:24 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_0_20210504
+2025-12-18 17:09:24 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:09:24 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 17:09:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:09:25.208640
+2025-12-18 17:09:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:09:29 | INFO     | diagnosis_agent:assess_risk:85 - 开始风险分层评估，患者ID: 1002_0_20210504
+2025-12-18 17:09:29 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_0_20210504
+2025-12-18 17:09:29 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 443ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:09:29 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 302ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:09:30 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 586ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:09:30 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 285ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:09:31 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 304ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:09:31 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 441ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:09:31 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:09:31 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1002_0_20210504
+2025-12-18 17:09:31 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:09:31 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压风险评估 很高危', 日期过滤: None
+2025-12-18 17:09:31 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 17:09:32 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 风险 评估   很 高危...', 结果数: 3
+2025-12-18 17:09:32 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:09:32 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:09:32 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:09:32 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:09:32 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 294ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:09:32 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 349ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:09:32 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中3条
+2025-12-18 17:09:32 | ERROR    | diagnosis_agent:assess_risk:140 - 风险评估失败: 'NoneType' object has no attribute 'get'
+2025-12-18 17:09:37 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1006_0_20210114
+2025-12-18 17:09:37 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1006_0_20210114
+2025-12-18 17:09:37 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 374ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:09:37 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 318ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:09:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 294ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:09:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 287ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:09:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 280ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:09:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 299ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:09:38 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:09:38 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1006_0_20210114
+2025-12-18 17:09:38 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:09:38 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1006_0_20210114
+2025-12-18 17:09:38 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告1条，是否安全: False
+2025-12-18 17:09:39 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 17:09:41 | INFO     | diagnosis_agent:assess_risk:85 - 开始风险分层评估，患者ID: 1006_0_20210114
+2025-12-18 17:09:41 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1006_0_20210114
+2025-12-18 17:09:41 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 310ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:09:41 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 312ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:09:42 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 286ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:09:42 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 319ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:09:42 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 310ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:09:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 315ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:09:43 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:09:43 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1006_0_20210114
+2025-12-18 17:09:43 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:09:43 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压风险评估 很高危', 日期过滤: None
+2025-12-18 17:09:43 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 17:09:43 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 风险 评估   很 高危...', 结果数: 3
+2025-12-18 17:09:43 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:09:43 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:09:43 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:09:43 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:09:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 294ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:09:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 362ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:09:44 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中3条
+2025-12-18 17:09:44 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 531, 历史消息数: 0
+2025-12-18 17:10:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:10:05.191594
+2025-12-18 17:10:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:11:10 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 4534
+2025-12-18 17:11:10 | INFO     | diagnosis_agent:assess_risk:136 - 风险评估完成，结果: 很高危
+2025-12-18 17:11:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:11:25.207261
+2025-12-18 17:11:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:12:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:12:05.205061
+2025-12-18 17:12:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:12:56 | INFO     | diagnosis_agent:generate_diagnosis:240 - 开始诊断推理，症状: 头晕、头痛伴视物模糊3天，血压测量168/98mmHg...
+2025-12-18 17:12:56 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 17:12:56 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '鉴别诊断 眩晕、头痛伴视物模糊3天，血压测量168/98mmHg', 日期过滤: None
+2025-12-18 17:12:57 | INFO     | vector_store:search:210 - 检索完成，查询: '鉴别 诊断   眩晕 头晕 、 头痛 伴视物 模糊 3 天 ， 血压 测量 168 / 98mmHg...', 结果数: 5
+2025-12-18 17:12:57 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中5条
+2025-12-18 17:12:57 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:12:57 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:12:57 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:12:57 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 311ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:12:57 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 436ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:12:57 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中5条
+2025-12-18 17:12:57 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 1659, 历史消息数: 0
+2025-12-18 17:13:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:13:25.204049
+2025-12-18 17:13:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:13:47 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 2439
+2025-12-18 17:13:47 | INFO     | diagnosis_agent:generate_diagnosis:335 - 诊断推理完成
+2025-12-18 17:14:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:14:05.198583
+2025-12-18 17:14:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:15:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:15:25.213939
+2025-12-18 17:15:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:16:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:16:05.194671
+2025-12-18 17:16:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:16:13 | INFO     | diagnosis_agent:generate_diagnosis:240 - 开始诊断推理，症状: 头晕、头痛伴视物模糊3天，血压测量168/98mmHg...
+2025-12-18 17:16:13 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 17:16:13 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '鉴别诊断 眩晕、头痛伴视物模糊3天，血压测量168/98mmHg', 日期过滤: None
+2025-12-18 17:16:14 | INFO     | vector_store:search:210 - 检索完成，查询: '鉴别 诊断   眩晕 头晕 、 头痛 伴视物 模糊 3 天 ， 血压 测量 168 / 98mmHg...', 结果数: 5
+2025-12-18 17:16:14 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中5条
+2025-12-18 17:16:14 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:16:14 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:16:14 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:16:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 297ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:16:15 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 476ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:16:15 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中5条
+2025-12-18 17:16:15 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 1659, 历史消息数: 0
+2025-12-18 17:17:24 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 2635
+2025-12-18 17:17:24 | INFO     | diagnosis_agent:generate_diagnosis:335 - 诊断推理完成
+2025-12-18 17:17:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:17:25.209439
+2025-12-18 17:17:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:18:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:18:05.194433
+2025-12-18 17:18:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:19:00 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 512ms, SQL: 
+        SELECT DISTINCT p.patient_id, p.name, p.gender, p.age, p.bmi,
+               h.sbp, h.dbp, h.risk_level as hypertension_risk,
+               d.hba1c, d.control_status as diabetes_status
+     ...
+2025-12-18 17:19:04 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1002_1_20210521
+2025-12-18 17:19:04 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_1_20210521
+2025-12-18 17:19:05 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 401ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:19:05 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 455ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:19:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 448ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:19:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 371ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:19:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 346ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:19:07 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 365ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:19:07 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 1 条诊断, 1 条用药记录
+2025-12-18 17:19:07 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1002_1_20210521
+2025-12-18 17:19:07 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:19:07 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_1_20210521
+2025-12-18 17:19:07 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:19:07 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 17:19:14 | INFO     | diagnosis_agent:generate_treatment_plan:359 - 开始生成治疗方案，患者ID: 1002_1_20210521, 诊断: 2级高血压合并2型糖尿病
+2025-12-18 17:19:14 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_1_20210521
+2025-12-18 17:19:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 337ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:19:15 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 448ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:19:15 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 511ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:19:16 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 408ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:19:16 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 438ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:19:16 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 462ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:19:16 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 1 条诊断, 1 条用药记录
+2025-12-18 17:19:16 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1002_1_20210521
+2025-12-18 17:19:16 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:19:16 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_1_20210521
+2025-12-18 17:19:16 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:19:16 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '治疗方案 2级高血压合并2型糖尿病 很高危', 日期过滤: None
+2025-12-18 17:19:16 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共2处替换
+2025-12-18 17:19:17 | INFO     | vector_store:search:210 - 检索完成，查询: '治疗 方案   2 级 高血压病 高血压 合并 型 糖尿病 很 高危...', 结果数: 5
+2025-12-18 17:19:17 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中5条
+2025-12-18 17:19:17 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:19:17 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:19:17 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:19:18 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 363ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:19:18 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 368ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:19:18 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中5条
+2025-12-18 17:19:18 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 1882, 历史消息数: 0
+2025-12-18 17:19:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:19:25.206484
+2025-12-18 17:19:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:20:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:20:05.203514
+2025-12-18 17:20:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:20:47 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 5086
+2025-12-18 17:20:47 | INFO     | diagnosis_agent:generate_treatment_plan:473 - 治疗方案生成完成
+2025-12-18 17:21:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:21:25.222137
+2025-12-18 17:21:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:22:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:22:05.193756
+2025-12-18 17:22:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:23:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:23:25.204981
+2025-12-18 17:23:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:23:35 | INFO     | diagnosis_agent:adjust_treatment:497 - 开始调整治疗方案，患者ID: 1002_1_20210521
+2025-12-18 17:23:35 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_1_20210521
+2025-12-18 17:23:36 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 307ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:23:36 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 401ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:23:36 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 365ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:23:37 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 335ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:23:37 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 524ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:23:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 613ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:23:38 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 1 条诊断, 1 条用药记录
+2025-12-18 17:23:38 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '治疗效果不佳 方案调整 治疗2周后血压仍为155/95mmHg，HbA1c无明显改善', 日期过滤: None
+2025-12-18 17:23:39 | INFO     | vector_store:search:210 - 检索完成，查询: '治疗 效果 不佳   方案 调整 2 周后 血压 仍为 155 / 95mmHg ， HbA1c 无...', 结果数: 3
+2025-12-18 17:23:39 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:23:39 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:23:39 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:23:39 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:23:39 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 489ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:23:40 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 369ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:23:40 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中3条
+2025-12-18 17:23:40 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 575, 历史消息数: 0
+2025-12-18 17:24:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:24:05.203890
+2025-12-18 17:24:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:25:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:25:25.214130
+2025-12-18 17:25:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:25:37 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 6742
+2025-12-18 17:25:37 | INFO     | diagnosis_agent:adjust_treatment:565 - 治疗方案调整完成
+2025-12-18 17:26:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:26:05.198939
+2025-12-18 17:26:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:27:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:27:25.202866
+2025-12-18 17:27:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:28:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:28:05.202555
+2025-12-18 17:28:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:28:54 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压合并糖尿病患者的降压药物选择', 日期过滤: None
+2025-12-18 17:28:54 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共2处替换
+2025-12-18 17:28:55 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 合并 糖尿病 患者 的 降压 药物 选择...', 结果数: 5
+2025-12-18 17:28:55 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中5条
+2025-12-18 17:28:55 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:28:55 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:28:55 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:28:56 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 326ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:28:56 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 368ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:28:56 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中5条
+2025-12-18 17:28:56 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 3071, 历史消息数: 0
+2025-12-18 17:29:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:29:25.205967
+2025-12-18 17:29:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:29:33 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 2374
+2025-12-18 17:30:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:30:05.205112
+2025-12-18 17:30:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:31:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:31:25.208856
+2025-12-18 17:31:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:32:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:32:05.190993
+2025-12-18 17:32:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:32:13 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1002_1_20210521
+2025-12-18 17:32:13 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 314ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:32:13 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 333ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:32:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 351ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:32:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 299ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:32:14 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 340ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:32:15 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 309ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:32:15 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 1 条诊断, 1 条用药记录
+2025-12-18 17:32:15 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_1_20210521
+2025-12-18 17:32:15 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:32:15 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1002_1_20210521
+2025-12-18 17:32:15 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告0条，是否安全: True
+2025-12-18 17:32:43 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1006_0_20210114
+2025-12-18 17:32:43 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1006_0_20210114
+2025-12-18 17:32:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 401ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:32:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 578ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:32:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 408ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:32:45 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 498ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:32:45 | INFO     | diagnosis_agent:check_drug_conflicts:156 - 开始用药冲突检测，患者ID: 1006_0_20210114
+2025-12-18 17:32:45 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1006_0_20210114
+2025-12-18 17:32:45 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 420ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:32:45 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 481ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:32:46 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 487ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:32:46 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:32:46 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1006_0_20210114
+2025-12-18 17:32:46 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:32:46 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1006_0_20210114
+2025-12-18 17:32:46 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告1条，是否安全: False
+2025-12-18 17:32:46 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 17:32:46 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 444ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:32:46 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 369ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:32:47 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 410ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:32:47 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 599ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:32:48 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 422ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:32:48 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:32:48 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1006_0_20210114
+2025-12-18 17:32:48 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告1条，是否安全: False
+2025-12-18 17:32:48 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '药物相互作用 禁忌 缬沙坦胶囊 阿司匹林肠溶片 布洛芬胶囊', 日期过滤: None
+2025-12-18 17:32:48 | INFO     | vector_store:search:210 - 检索完成，查询: '药物 相互作用   禁忌 缬沙坦 代文 胶囊 阿司匹林肠溶片 拜阿司匹灵 布洛芬...', 结果数: 3
+2025-12-18 17:32:48 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:32:48 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:32:49 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:32:49 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:32:49 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 490ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:32:49 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中0条
+2025-12-18 17:32:49 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 206, 历史消息数: 0
+2025-12-18 17:32:52 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1006_0_20210114
+2025-12-18 17:32:52 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 407ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:32:53 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 490ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:32:53 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 510ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:32:54 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 465ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:32:54 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 554ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:32:55 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 381ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:32:55 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:32:55 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1006_0_20210114
+2025-12-18 17:32:55 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告1条，是否安全: False
+2025-12-18 17:32:55 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1006_0_20210114
+2025-12-18 17:32:55 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告1条，是否安全: False
+2025-12-18 17:33:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:33:25.206864
+2025-12-18 17:33:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:33:48 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 3278
+2025-12-18 17:33:48 | INFO     | diagnosis_agent:check_drug_conflicts:216 - 用药冲突检测完成，发现0条禁忌，0条相互作用
+2025-12-18 17:34:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:34:05.192730
+2025-12-18 17:34:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:35:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:35:25.204450
+2025-12-18 17:35:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:36:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:36:05.190353
+2025-12-18 17:36:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:37:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:37:25.211589
+2025-12-18 17:37:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:38:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:38:05.203943
+2025-12-18 17:38:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:39:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:39:25.212785
+2025-12-18 17:39:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:40:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:40:05.193367
+2025-12-18 17:40:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:41:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:41:25.201866
+2025-12-18 17:41:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:42:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:42:05.197123
+2025-12-18 17:42:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:43:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:43:25.213439
+2025-12-18 17:43:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:44:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:44:05.194406
+2025-12-18 17:44:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:45:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:45:25.216785
+2025-12-18 17:45:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:46:05 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:46:05.201737
+2025-12-18 17:46:05 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:46:45 | INFO     | app:init_app:548 - ==================================================
+2025-12-18 17:46:45 | INFO     | app:init_app:549 - 糖尿病智能诊断助手启动中...
+2025-12-18 17:46:45 | INFO     | app:init_app:550 - ==================================================
+2025-12-18 17:46:45 | INFO     | db_service:__init__:20 - 数据库服务初始化，连接到: rm-bp1y35g510t57uexqlo.mysql.rds.aliyuncs.com:3306
+2025-12-18 17:46:46 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
+2025-12-18 17:46:46 | INFO     | app:init_app:562 - ✓ 数据库连接成功
+2025-12-18 17:46:46 | INFO     | vector_store:__init__:58 - 向量存储初始化完成，持久化目录: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 17:46:49 | INFO     | vector_store:load_index:160 - 索引加载成功，最后更新时间: 2025-12-18 16:36:27.391147
+2025-12-18 17:46:49 | INFO     | app:init_app:571 - ✓ 向量存储初始化完成
+2025-12-18 17:46:49 | INFO     | scheduler:__init__:28 - 索引调度器初始化，更新间隔: 120秒
+2025-12-18 17:46:49 | INFO     | scheduler:start:49 - 索引调度器已启动，每120秒更新一次
+2025-12-18 17:46:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:46:49.062506
+2025-12-18 17:46:49 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 中国高血压防治指南.pdf
+2025-12-18 17:46:53 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 中国高血压防治指南.pdf, 共81页有效内容
+2025-12-18 17:46:56 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 中国高血压防治指南.pdf, 共18个表格
+2025-12-18 17:46:56 | INFO     | data_ingest:__init__:21 - 初始化PDF处理器: 高血压诊疗指南.pdf
+2025-12-18 17:46:57 | INFO     | data_ingest:extract_text_with_pages:43 - PDF提取完成: 高血压诊疗指南.pdf, 共16页有效内容
+2025-12-18 17:46:58 | INFO     | data_ingest:extract_tables:70 - 表格提取完成: 高血压诊疗指南.pdf, 共0个表格
+2025-12-18 17:46:58 | INFO     | data_ingest:load_all_pdfs:386 - 共加载2个PDF文件，生成115个检索块
+2025-12-18 17:47:13 | INFO     | vector_store:_persist_index:172 - 索引已持久化到: F:\study\AI\pingan\code\diabetes_medical_agent\knowledge_base\vector_index
+2025-12-18 17:47:13 | INFO     | vector_store:build_index:97 - 向量索引构建成功，更新时间: 2025-12-18 17:47:13.659446
+2025-12-18 17:47:13 | INFO     | scheduler:_update_index_job:88 - 索引更新成功，耗时: 24.60秒，累计更新次数: 1
+2025-12-18 17:47:13 | INFO     | app:init_app:578 - ✓ 定时任务调度器启动
+2025-12-18 17:47:13 | INFO     | app:init_app:582 - ==================================================
+2025-12-18 17:47:13 | INFO     | app:init_app:583 - 应用初始化完成!
+2025-12-18 17:47:13 | INFO     | app:init_app:584 - ==================================================
+2025-12-18 17:47:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:47:25.207253
+2025-12-18 17:47:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:48:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:48:49.064093
+2025-12-18 17:48:49 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:49:18 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: PREGNANT_TEST_001
+2025-12-18 17:49:18 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 334ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:49:19 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 383ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:49:19 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 330ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:49:19 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 315ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:49:20 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 340ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:49:20 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 503ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:49:20 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 2 条诊断, 2 条用药记录
+2025-12-18 17:49:20 | INFO     | safety_guard:__init__:16 - 安全预警模块初始化完成
+2025-12-18 17:49:20 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: PREGNANT_TEST_001
+2025-12-18 17:49:20 | INFO     | safety_guard:check_all:71 - 安全检查完成，共2条警告，危急警告2条，是否安全: False
+2025-12-18 17:49:20 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: PREGNANT_TEST_001
+2025-12-18 17:49:20 | INFO     | safety_guard:check_all:71 - 安全检查完成，共2条警告，危急警告2条，是否安全: False
+2025-12-18 17:49:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:49:25.222785
+2025-12-18 17:49:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:50:01 | INFO     | llm_client:__init__:24 - LLM客户端初始化完成，模型: qwen-plus-latest
+2025-12-18 17:50:03 | INFO     | term_mapper:__init__:23 - 术语映射器初始化完成，共30个映射
+2025-12-18 17:50:03 | INFO     | rag_service:__init__:25 - RAG服务初始化完成
+2025-12-18 17:50:03 | INFO     | risk_engine:__init__:17 - 风险评估引擎初始化完成
+2025-12-18 17:50:03 | INFO     | diagnosis_agent:__init__:28 - 诊疗决策智能体初始化完成
+2025-12-18 17:50:03 | INFO     | diagnosis_agent:process_emergency:695 - 处理紧急情况，症状: 头痛呕吐3小时，视物模糊...
+2025-12-18 17:50:03 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '高血压急症 紧急处理 静脉降压', 日期过滤: None
+2025-12-18 17:50:03 | INFO     | term_mapper:normalize_text:84 - 文本标准化完成，共1处替换
+2025-12-18 17:50:04 | INFO     | vector_store:search:210 - 检索完成，查询: '高血压病 高血压 急症   紧急 处理 静脉 降压...', 结果数: 3
+2025-12-18 17:50:04 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中3条
+2025-12-18 17:50:04 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:50:05 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:50:05 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:50:05 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 510ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:50:06 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 363ms, SQL: 
+        SELECT assessment_id, patient_id, assessment_date, sbp, dbp, 
+               risk_factors, risk_level, follow_up_plan
+        FROM hypertension_risk_assessment
+        ORDER BY assessment_dat...
+2025-12-18 17:50:06 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中3条
+2025-12-18 17:50:06 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 167, 历史消息数: 0
+2025-12-18 17:50:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:50:49.074633
+2025-12-18 17:50:49 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:51:01 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 3283
+2025-12-18 17:51:01 | INFO     | diagnosis_agent:process_emergency:758 - 紧急情况处理完成，是否急症: True
+2025-12-18 17:51:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:51:25.222728
+2025-12-18 17:51:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:52:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:52:49.066739
+2025-12-18 17:52:49 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:52:56 | INFO     | diagnosis_agent:soap_consultation:589 - 开始SOAP问诊，主诉: 头晕...
+2025-12-18 17:52:56 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 377, 历史消息数: 0
+2025-12-18 17:53:11 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 638
+2025-12-18 17:53:11 | INFO     | diagnosis_agent:soap_consultation:662 - SOAP问诊完成，状态: need_clarification
+2025-12-18 17:53:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:53:25.208199
+2025-12-18 17:53:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:54:11 | INFO     | diagnosis_agent:soap_consultation:589 - 开始SOAP问诊，主诉: 头重脚轻，每周发作2,3次， 伴有恶心...
+2025-12-18 17:54:11 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 1023, 历史消息数: 0
+2025-12-18 17:54:29 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 943
+2025-12-18 17:54:29 | INFO     | diagnosis_agent:soap_consultation:662 - SOAP问诊完成，状态: need_clarification
+2025-12-18 17:54:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:54:49.070265
+2025-12-18 17:54:49 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:55:19 | INFO     | diagnosis_agent:soap_consultation:589 - 开始SOAP问诊，主诉: 每次发作持续半个小时， 有高血压和糖尿病历史...
+2025-12-18 17:55:19 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 1979, 历史消息数: 0
+2025-12-18 17:55:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:55:25.213029
+2025-12-18 17:55:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:55:45 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 1363
+2025-12-18 17:55:45 | INFO     | diagnosis_agent:soap_consultation:662 - SOAP问诊完成，状态: need_clarification
+2025-12-18 17:56:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:56:49.064985
+2025-12-18 17:56:49 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:57:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:57:25.211036
+2025-12-18 17:57:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:57:33 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 316ms, SQL: 
+        SELECT DISTINCT p.patient_id, p.name, p.gender, p.age, p.bmi,
+               h.sbp, h.dbp, h.risk_level as hypertension_risk,
+               d.hba1c, d.control_status as diabetes_status
+     ...
+2025-12-18 17:57:38 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1006_0_20210114
+2025-12-18 17:57:38 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1006_0_20210114
+2025-12-18 17:57:38 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 333ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:57:39 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 362ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:57:39 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 311ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:57:40 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 380ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:57:40 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 316ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:57:40 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 339ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:57:40 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:57:40 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1006_0_20210114
+2025-12-18 17:57:40 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:57:40 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1006_0_20210114
+2025-12-18 17:57:40 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告1条，是否安全: False
+2025-12-18 17:57:40 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 17:57:42 | INFO     | diagnosis_agent:generate_treatment_plan:359 - 开始生成治疗方案，患者ID: 1006_0_20210114, 诊断: None
+2025-12-18 17:57:42 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1006_0_20210114
+2025-12-18 17:57:42 | INFO     | diagnosis_agent:build_patient_profile:40 - 开始构建患者画像，患者ID: 1006_0_20210114
+2025-12-18 17:57:42 | INFO     | db_service:get_patient_full_profile:152 - 获取患者完整档案，patient_id: 1006_0_20210114
+2025-12-18 17:57:42 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 305ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:57:42 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 321ms, SQL: 
+        SELECT patient_id, name, gender, age, height_cm, weight_kg, bmi, phone, address, 
+               create_time, update_time
+        FROM patient_info 
+        WHERE patient_id = %s
+        ...
+2025-12-18 17:57:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 312ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:57:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 325ms, SQL: 
+        SELECT diag_id, diagnosis_date, diagnosis_code, diagnosis_name, 
+               diagnosis_type, severity_level, icd10_code
+        FROM diagnosis_records 
+        WHERE patient_id = %s
+      ...
+2025-12-18 17:57:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 312ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:57:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 333ms, SQL: 
+        SELECT med_id, medication_date, drug_name, drug_class, dosage, 
+               frequency, duration, prescribing_doctor, is_insulin
+        FROM medication_records 
+        WHERE patient_id = ...
+2025-12-18 17:57:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 314ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:57:43 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 299ms, SQL: 
+        SELECT result_id, test_date, test_type, test_item, result_value, 
+               unit, reference_range, is_abnormal, test_notes
+        FROM lab_results 
+        WHERE patient_id = %s
+       ...
+2025-12-18 17:57:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 298ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:57:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 333ms, SQL: 
+        SELECT assessment_id, assessment_date, sbp, dbp, heart_rate,
+               risk_factors, target_organs_damage, clinical_conditions,
+               risk_level, follow_up_plan
+        FROM hyp...
+2025-12-18 17:57:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 304ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:57:44 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:57:44 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1006_0_20210114
+2025-12-18 17:57:44 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:57:44 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1006_0_20210114
+2025-12-18 17:57:44 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告1条，是否安全: False
+2025-12-18 17:57:44 | INFO     | diagnosis_agent:build_patient_profile:64 - 患者画像构建完成，风险等级: 很高危
+2025-12-18 17:57:44 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 323ms, SQL: 
+        SELECT assessment_id, assessment_date, fasting_glucose, postprandial_glucose,
+               hba1c, insulin_usage, insulin_type, insulin_dosage, 
+               control_status, complications
+...
+2025-12-18 17:57:44 | INFO     | db_service:get_patient_full_profile:168 - 患者档案获取成功，包含 3 条诊断, 3 条用药记录
+2025-12-18 17:57:44 | INFO     | risk_engine:assess_patient:29 - 开始患者风险评估，患者ID: 1006_0_20210114
+2025-12-18 17:57:44 | INFO     | risk_engine:assess_patient:62 - 患者风险评估完成，总体风险等级: 很高危
+2025-12-18 17:57:44 | INFO     | safety_guard:check_all:29 - 开始安全检查，患者ID: 1006_0_20210114
+2025-12-18 17:57:44 | INFO     | safety_guard:check_all:71 - 安全检查完成，共1条警告，危急警告1条，是否安全: False
+2025-12-18 17:57:44 | INFO     | rag_service:search_all_sources:46 - 开始跨源检索，查询: '治疗方案  很高危', 日期过滤: None
+2025-12-18 17:57:45 | INFO     | vector_store:search:210 - 检索完成，查询: '治疗 方案   很 高危...', 结果数: 5
+2025-12-18 17:57:45 | INFO     | rag_service:search_all_sources:67 - PDF检索完成，命中5条
+2025-12-18 17:57:45 | INFO     | data_ingest:__init__:154 - 初始化Excel处理器: 糖尿病病例统计.xlsx
+2025-12-18 17:57:45 | INFO     | data_ingest:load_data:160 - Excel加载成功: 糖尿病病例统计.xlsx, 共125行
+2025-12-18 17:57:45 | INFO     | rag_service:search_all_sources:76 - Excel检索完成，命中0条
+2025-12-18 17:57:46 | INFO     | db_service:execute_query:54 - SQL查询执行成功，耗时: 312ms, SQL: 
+        SELECT rule_id, guideline_name, disease_type, patient_condition,
+               recommendation_level, recommendation_content, evidence_source, update_date
+        FROM guideline_recommendatio...
+2025-12-18 17:57:46 | INFO     | rag_service:search_all_sources:85 - MySQL检索完成，命中0条
+2025-12-18 17:57:46 | INFO     | llm_client:generate:54 - 调用LLM，prompt长度: 2084, 历史消息数: 0
+2025-12-18 17:58:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:58:49.076181
+2025-12-18 17:58:49 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:59:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T17:59:25.199979
+2025-12-18 17:59:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 17:59:47 | INFO     | llm_client:generate:63 - LLM响应成功，响应长度: 6395
+2025-12-18 17:59:47 | INFO     | diagnosis_agent:generate_treatment_plan:473 - 治疗方案生成完成
+2025-12-18 18:00:49 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:00:49.068526
+2025-12-18 18:00:49 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 18:01:25 | INFO     | scheduler:_update_index_job:73 - 开始执行索引更新任务，时间: 2025-12-18T18:01:25.213647
+2025-12-18 18:01:25 | INFO     | scheduler:_update_index_job:98 - 未检测到新文件，跳过索引更新
+2025-12-18 18:02:09 | INFO     | db_service:test_connection:259 - 数据库连接测试成功
